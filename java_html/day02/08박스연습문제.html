@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        box1 박스를 클릭하면 naver로 이동하는 버튼
+        글자는 버튼 가운데정렬
+    -->
+    <style>
+        .box1{
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            border: 1px solid greenyellow;
+            border-radius: 30px;
+            background-color: rgb(33, 255, 25);
+            text-align: center;
+            padding-top: 130px;
+            font-size: 30px;
+            font-weight: 700;
+           color: rgba(255, 0, 0,0.6);
+           display: inline-block;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        .box1:hover{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAZlBMVEUAxzz///8AvTnQ7NnA58zw+fMAwjqQ1qVgyYBQxnQAxTwAwjsAuziQ1KTr9+/M69X4/Pm65cfk9OmV1qmI054wwFx+z5Ypv1Z0zI8jv1Jqyoccv02w4b8zyGAOw0RgzYGn3rhVxnd55K9YAAABaElEQVR4nO3bzU7jMBSAUdtDQuuU0sJAgfL7/i/JbCYJbcUCIcG1zllVV7LkT7GUhZuUAAAAAAAAAAAAAAAA4BO1fI/60yElf48iRIgQIUKECBEiRIgQIUKE/NaQq4vz0fVsvp3mF+sIIWerflT+TvNFGcerPyFCZnuqsy0v+mlRuJBUbxoJScNtIyG1XLYRkupu00ZI6u8aCanlrI2QVO+7NkJS/9BISCrbRkLqvmsjJA2LRkJSeWwkpO7XkUPq0/P/u8Fh+TJdE8YLWV4P4+/n0CF52Z9aFDDkan/i4jliSH49scWQIfltOF4UMmR9fLhihuTHo00GDcmLw8MVNaQ7PFxRQ/L2YJthQ/LDx9di3JDu/sPhihvybzgvCRyS7+aHK3LIZjd7JEFCVuMfFVdv0/hyGpcY1wq5m2xOj7vjRb8x5EuECBEiRIgQIUKECBEiREj0kGa+QwQAAAAAAAAAAAAAAGjTO8dRHCycgQ+qAAAAAElFTkSuQmCC);
+            background-size: 100%;
+            font-size: 0%;
+            
+            /* color: rgba(240, 248, 255,0); */
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank" rel="noopener noreferrer">
+        <div class="box1">
+         button
+        </div>
+    </a>
+</body>
+</html>

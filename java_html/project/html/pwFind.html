@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>pwFind</title>
+        <link rel="stylesheet" href="/project/css/header.css" />
+        <link rel="stylesheet" href="/project/css/pwFind.css" />
+        <link rel="stylesheet" href="/project/css/footer.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <header id="header"></header>
+        <section>
+            <div id="container">
+                <h2>비밀번호 찾기</h2>
+                <div class="div1">아이디</div>
+                <input type="text" id="uid" /><br /><br />
+                <div class="div1">이름</div>
+                <input type="text" id="name" /><br /><br />
+                <div class="div1">이메일로 찾기</div>
+                <input type="text" id="email" /><br /><br />
+                <div>
+                    <button type="submit" id="check">확인</button>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+        <script src="/project/js/header_footer.js"></script>
+        <script>
+            let check = document.getElementById("check");
+            console.log(check.name);
+            check.addEventListener("click", () => {
+                let id = document.getElementById("uid").value;
+                let id1 = "ezen";
+                let email = document.getElementById("email").value;
+                let emailch = "ezen@gmail.com";
+                if (id == id1 && email == emailch) {
+                    location.href = "repass.html";
+                } else if (id != id1) {
+                    alert("등록된 아이디가 없습니다.");
+                } else if (email != emailch) {
+                    alert("등록된 이메일이 다릅니다.");
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="strData">
+        <button type="button" onclick="cc()">button</button>
+    </form>
+    <h1 id="result"></h1>
+    
+    <script>
+        // function onClickFunc(data){
+        //     var result = document.getElementById("result");
+        //     result.innerText = palindrome(data, 0, data.length-1);
+        // }
+        // function palindrome(data, left, right){
+        //     if(left>=right) return true;
+        //     if(data[left] == data.charAt(right)) return palindrome(data, left+1, right-1);
+        //     return false;
+        // }
+        function isPalindrome(word){
+            let wordLen = Math.floor(word.length/2);
+            for(let i=0; i<wordLen;i++){
+                if(word.charAt(i) !=word.charAt(word.length-1-i)){
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        function cc(){
+            let strData = document.getElementById('strData').value;
+            document.getElementById('result').innerText=
+            `${(siPalindrome(strData))? '펠린드롬임' : '펠린드롬아님'}`;
+        }
+
+    </script>
+</body>
+</html>

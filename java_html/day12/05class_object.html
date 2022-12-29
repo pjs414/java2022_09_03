@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        클래스, 리터럴 객체, 생성자 함수 통해서 객체를 만들어보자
+        정의할 프로퍼티 : firstName, lastName, age, color
+    </h1>
+    <script>
+        //클래스 형태
+        class PersonClass{
+            constructor(first, last, age, color){
+                this.first=first;
+                this.last=last;
+                this.age=age;
+                this.color=color;
+            }
+            get personInfo(){
+                return `${this.first}, ${this.last}, ${this.age}, ${this.color}`
+            }
+        }
+        const aaa = new PersonClass('asd','abe',756,'violet');
+        console.log(aaa.personInfo);
+        console.log(aaa);
+        //리터럴 객체
+        const personObject={
+            first:'',
+            last:'',
+            age:0,
+            color:'',
+            setAllInfo:function(first, last, age, color){
+                this.first=first;
+                this.last=last;
+                this.age=age;
+                this.color=color;
+            },
+            get personInfo(){
+                return `${this.first}, ${this.last}, ${this.age}, ${this.color}`
+            }
+        }
+        personObject.setAllInfo('fff','aaa',3,'black');
+        console.log(personObject.personInfo);
+        console.log(personObject);
+        //생성자 함수
+        function PersonObject(first, last, age, color){
+                this.first=first;
+                this.last=last;
+                this.age=age;
+                this.color=color;
+                this.getPersonInfo=function(){
+                    return `${this.first}, ${this.last}, ${this.age}, ${this.color}`
+                }
+        }
+        const myInfo = new PersonObject('gildong','hong',42,'red');
+        console.log(myInfo);
+
+        console.log('------');
+        //생성자 함수로 생성
+        //teacher : name, age, subject
+        //function 학생명을 피라미터로 입력받아
+        //출력 : 학생에게 과목을 가르칩니다.
+        function Teacher(name,age,subject){
+            this.name=name;
+            this.age=age;
+            this.subject=subject;
+            this.print=function(name){
+                console.log(`${name}학생에게 ${this.subject}과목을 가르칩니다.`)
+            }
+        }
+        //객체생성 => 출력
+        const te = new Teacher('나선생',12,'물리');
+        te.print('aaa');
+
+    </script>
+</body>
+</html>

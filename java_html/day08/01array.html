@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        자바스크립트의 배열을 유동배열 : 크기와 데이터가ㅏ 변경이 가능하다.
+    </h1>
+    <ul>
+        <li>
+            const myArray = ['a','b','c',1,2,3];
+        </li>
+        <li>
+            자바에서는 데이터의 타입이 같아야햇지만
+            데이터 타입이 다르더라도 허용하고 있음.
+        </li>
+        <li>
+            maArray={};
+            초기값이 없는 배열을 만들어 둔 후 데이터를 추가해서 크기 변경이 가능
+        </li>
+        <li>
+            각 데이터들은 (,)로 분리되고, 자리 index로 관리, 0부터 시작
+        </li>
+        <li>
+            길이(length) 속성을 사용하여 측정, 크기가 변동될때마다 자동으로 체크
+        </li>
+        <li>
+            index번호 순서의 뛰어넘음 등의 변칙적인 사용이 가능, 모두 undefined로 초기화됨
+        </li>
+        <li>
+            추후 데이터 통시느 변환에서 자주 사용됨
+        </li>
+    </ul>
+    <script>
+        const myArray=['a',"b",`c`,1,2,3];
+        console.log(myArray);
+        console.log(myArray.length);
+        console.log(myArray[0]);
+        
+        myArray[myArray.length]='add';
+        console.log(myArray);
+        myArray[myArray.length+3]='new';
+        console.log(myArray);
+        console.log(myArray[7]);
+        console.log(myArray[8]);
+        console.log(myArray[9]);
+        myArray[7]='apple';
+        console.log(myArray);
+        console.log('---------------');
+        let array1 = [10,20,30,40,50];
+        //다른 타입의 데이터들과 혼합된 형태로 만들어 사용되는 경우가 많다
+        let array2 = [1,true,'kim',undefined,{k:'value'},['k','b']];
+        
+        for(let i=0; i<array1.length; i++){
+            console.log(array1[i]);
+        }
+        for(let i=0; i<array2.length; i++){
+            console.log(typeof array2[i], array2[i]);
+        }
+        let key='k'
+        console.log(array2[array2.length-2].k);//키로 값을 검색
+        console.log(array2[array2.length-1][0]);//키로 값을 검색
+        console.log(array2[array2.length-1][1]);//키로 값을 검색
+        console.log('---------------');
+        for(let elem of array2){
+            console.log(typeof elem, elem);
+        }
+        
+        </script>
+</body>
+</html>

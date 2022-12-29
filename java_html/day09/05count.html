@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>count 만들기</h1>
+    +버튼을 클릭하면 숫자가 1씩 증가하고,
+    -버튼을 클릭하면 숫자가 1씩 감소하느 count만들기
+    <br>
+    <button type="button" id="incre">+</button>
+    <button type="button" id="decre">-</button>
+    <h3 id="count">0</h3>
+    <script>
+        let cnt=0;
+        document.getElementById('incre').addEventListener('click',()=>{
+            cnt++;
+            document.getElementById('count').innerText=cnt
+        })
+        document.getElementById('decre').addEventListener('click',()=>{
+            cnt--;
+            if(cnt<0){
+                cnt=0;
+            }
+            document.getElementById('count').innerText=cnt
+        })
+    </script>
+</body>
+</html>

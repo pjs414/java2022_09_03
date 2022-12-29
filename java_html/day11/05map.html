@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        map : key / value 형태로 데이터 한개를 배열로 만들어 다시 배열에 저장하는 방식
+    </h1>
+    <ul>
+        <li>
+            중첩 구조이기 때문에 key의 중복확인이 필수
+        </li>
+        <li>
+            객체를 배열화 시킨 구조
+        </li>
+        <li>
+            map.size : map의 데이터 수 리턴
+        </li>
+        <li>
+            map.set(key,value) : 데이터 삽입
+        </li>
+        <li>
+            map.get(key) : key에 해당하는 value를 조회
+        </li>
+        <li>
+            map.delete(key) : key값으로 해당 데이터 제거
+        </li>
+        <li>
+            map.has(key) : 해당 key 값으 데이터가 있는지 true / false로 리턴
+        </li>
+        <li>
+            map.clear() : 모든 데이터 제거
+        </li>
+        <li>
+            map.keys(), map.values(), map.entries() : map의 각 속성을 iterator로 리턴
+        </li>
+    </ul>
+    <script>
+        const myMap = new Map();
+        myMap.set('html',85);
+        myMap.set('css',97);
+        myMap.set('js',75);
+        console.log(myMap);
+        console.log(myMap.size);
+        console.log(myMap.get('js'));
+        myMap.delete('js');
+        console.log(myMap);
+        console.log(myMap.has('js'));
+        console.log(myMap.has('css'));
+        myMap.forEach(function(v,k,s){
+            console.log(k,v);
+        })
+        console.log('------------------------');
+        // mtMap.entries().forEach(function(v,k,s) {
+        //     console.log(k,v);
+        // })
+
+        for(const iter of myMap.entries()){
+            for(const key in iter){
+                console.log(key, iter[key]);
+            }
+        }
+        console.log(myMap.keys());
+        console.log(myMap.values());
+
+        let sum=0;
+        myMap.forEach(function(v,k,s){
+            sum+=v;
+        })
+
+
+        console.log(sum);
+        console.log(sum/myMap.size);
+    </script>
+</body>
+</html>

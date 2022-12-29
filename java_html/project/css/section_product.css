@@ -1,0 +1,164 @@
+#container {
+    font-family: font1;
+    font-weight: bold;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#number {
+    display: none;
+}
+#middleLeft {
+    padding-top: 50px;
+    display: inline-block;
+    width: 840px;
+}
+#middleLeft > #imageBox > .image {
+    margin: auto;
+    width: 700px;
+    object-fit: cover;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+#middleLeft > #imageBox > .image > img {
+    width: 100%;
+}
+#text {
+    text-align: left;
+    font-size: 20px;
+    margin: 40px 70px;
+    font-family: font3;
+}
+#productInfo {
+    text-align: left;
+    margin: 40px 70px;
+}
+#middleRight {
+    display: inline-block;
+    padding-top: 50px;
+    width: 360px;
+}
+#moveBox {
+    position: sticky;
+    top: 50px;
+    width: 300px;
+    text-align: left;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 0 30px 30px 30px;
+    font-size: 15px;
+    background-color: white;
+}
+#productName {
+    font-size: 20px;
+    padding-top: 30px;
+}
+#productCategory {
+    padding: 10px 0;
+}
+#productPrice {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c9c9c9;
+}
+#productPrice2 {
+    display: none;
+}
+#productAmount {
+    padding-top: 30px;
+}
+#orderAmount {
+    padding: 20px 0;
+}
+#plus,
+#minus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5 ease;
+}
+#plus:hover,
+#minus:hover {
+    background-color: #a5a5a5;
+}
+#moveBox > input {
+    height: 28px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    border: none;
+    font-family: font3;
+    font-weight: bold;
+    outline: none;
+}
+#totPriceText {
+    border-top: 1px solid #c9c9c9;
+    margin-top: 30px;
+    padding: 30px 0 10px 0;
+    font-size: 20px;
+}
+#totPrice {
+    font-size: 30px;
+    text-align: right;
+    font-family: font3;
+}
+#buyBox {
+    text-align: center;
+}
+#buy {
+    width: 70%;
+    height: 50px;
+    margin: 30px 0 20px 0;
+    background-color: rgb(194, 194, 194);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: font1;
+    color: white;
+}
+.like {
+    width: 50px;
+    height: 50px;
+    margin: 30px 0 20px 10px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 900;
+    border: 2.5px solid rgb(194, 194, 194);
+    background-color: rgb(194, 194, 194);
+    color: white;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    outline: none;
+}
+.like:hover {
+    background-color: white;
+    color: rgb(255, 160, 189);
+    border: 2.5px solid rgb(255, 160, 189);
+}
+.like > span {
+    top: 10.8px;
+    left: 11.3px;
+    position: absolute;
+}
+.on {
+    color: white;
+    border: 2.5px solid rgb(255, 77, 130);
+    background-color: rgb(255, 77, 130);
+}
+.on:hover {
+    color: white;
+    border: 2.5px solid rgb(255, 160, 189);
+    background-color: rgb(255, 160, 189);
+}

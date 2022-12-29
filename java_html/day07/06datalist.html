@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        form에서 입력한 데이터를 가져와 자바 스크립트 객체로 저장한 후 그 객체에 저장된 데이터를 버튼 이벤트를 통해서 출력하기
+    </h1>
+    <ul>
+        <li>
+            데이터 저장 버튼을 클릭하면 form에 입력된 데이터가 객체로 저장
+        </li>
+        <li>
+            출력버튼을 클릭하면 데이터가 html list로 출력된다,
+        </li>
+    </ul>
+    <h3>
+        데이터 리스트
+    </h3>
+    <ol>
+        <li>이름</li>
+        <li>거주지</li>
+        <li>좋아하는 리스트
+            <ul>
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+            </ul>
+        </li>
+        <li>이메일</li>
+        <li>pet</li>
+        <li>지금 가장 하고싶은 것</li>
+    </ol>
+    <h3>리스트의 구조에 다라 자바 스크립트 객체를 만들어 저장</h3>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        거주지 : <input type="text" id="addr"><br>
+        좋아하는 리스트 <br>
+        1 : <input type="text" id="fav1"><br>
+        2 : <input type="text" id="fav2"><br>
+        3 : <input type="text" id="fav3"><br>
+        이메일 : <input type="mail" id="em"><br>
+        pet : <input type="text" id="pet"><br>
+        지금 가장 원하는 것 : <input type="text" id="wan"><br>
+        <button type="button" onclick="get()">객체로 전송</button>
+    </form>
+    <h3>위에서 만든 객체를 출력</h3>
+    <button type="button" onclick="pri()">출력</button>
+    <table border="1px">
+        <tr>
+            <th>이름</th>
+            <td id="name1"></td>
+        </tr>
+        <tr>
+            <th>거주지</th>
+            <td id="addr1"></td>
+        </tr>
+        <tr>
+            <th>좋아하는 리스트</th>
+            <td>
+                <ul id="fav"></ul>
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td id="em1"></td>
+        </tr>
+        <tr>
+            <th>pet</th>
+            <td id="pet1"></td>
+        </tr>
+        <tr>
+            <th>지금 가장 하고싶은 거</th>
+            <td id="wan1"></td>
+        </tr>
+    </table>
+    <script>
+
+        const me= {
+            name : "",
+            addr : "",
+            em : "",
+            wan : "",
+            pet : "",
+            fav : {
+                f1 : "",
+                f2 : "",
+                f3 : ""
+            }
+        }
+        function get(){
+            let name = document.getElementById('name').value;
+            let addr = document.getElementById('addr').value;
+            let em = document.getElementById('em').value;
+            let pet = document.getElementById('pet').value;
+            let wan = document.getElementById('wan').value;    
+            let f1 = document.getElementById('fav1').value;
+            let f2 = document.getElementById('fav2').value;
+            let f3 = document.getElementById('fav3').value;
+                
+            me.name = name;
+            me.addr = addr;
+            me.em = em;
+            me.wan = wan;
+            me.pet = pet;
+            me.fav.f1 = f1;
+            me.fav.f2 = f2;
+            me.fav.f3 = f3;
+        }
+        function pri(){
+            document.getElementById('name1').innerText=me.name;
+            document.getElementById('addr1').innerText=me.addr;
+            document.getElementById('em1').innerText=me.em;
+            document.getElementById('pet1').innerText=me.pet;
+            document.getElementById('wan1').innerText=me.wan;
+            document.getElementById('fav').innerHTML=
+            `<li>${me.fav.f1}</li>`;
+            document.getElementById('fav').innerHTML+=
+            `<li>${me.fav.f2}</li>`;
+            document.getElementById('fav').innerHTML+=
+            `<li>${me.fav.f3}</li>`;
+
+        }
+    </script>
+</body>
+</html>

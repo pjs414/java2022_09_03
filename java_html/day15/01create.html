@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        li tag 추가하는 예제
+    </h1>
+    <button type="button" id="btn1">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn2">Li Tag 하나씩 추가하기</button>
+    <ul id="ul">
+    </ul>
+    <hr>
+    <ol id="ol"></ol>
+    <hr>
+    <button type="button" id="btn3">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn4">Li Tag 하나씩 추가하기</button>
+    <ul id="ul2">
+    </ul>
+    <hr>
+    <ol id="ol2"></ol>
+    <hr>
+    <script>
+        let arr=['HTML','CSS', 'Javascript','SQL'];
+        let arr1=['HTML','CSS', 'Javascript','SQL'];
+        document.querySelector('#btn1').addEventListener('click', ()=>{
+            while(arr.length>0){
+                let tx= arr.shift();
+                document.querySelector('#ul').innerHTML+=
+                `<li>${tx}</li>`
+            }
+        })
+        document.querySelector('#btn2').addEventListener('click', ()=>{
+            if(arr1.length==0){
+            }else{
+                let tx= arr1.shift();
+                console.log(tx);
+                document.querySelector('#ol').innerHTML+=
+                `<li>${tx}</li>`
+            }
+        })
+        document.querySelector('#btn3').addEventListener('click', ()=>{
+            let ul2 =document.getElementById('ul2')
+            arr.forEach((elem)=>{
+                let liTag=document.createElement('li');
+                let aTag=document.createElement('a');
+                aTag.setAttribute('href',`#${elem.toLocaleLowerCase()}`);
+                aTag.innerText=elem;
+                liTag.appendChild(aTag);
+                ul2.appendChild(liTag);
+            })
+        })
+        let index=0;
+        const ol2 =document.getElementById('ol2')
+        document.querySelector('#btn4').addEventListener('click', ()=>{
+            if(index <arr.length){
+                let liTag=document.createElement('li');
+                let aTag=document.createElement('a');
+                aTag.setAttribute('href',`#${arr[index].toLocaleLowerCase()}`);
+                aTag.innerText=arr[index];
+                liTag.appendChild(aTag)
+                ol2.appendChild(liTag)
+                index++
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        input text에 파일명.확장자를 입력하고, 전송버튼을 클릭하면
+        이미지 파일= 정상파일입니다.
+        이미지파일이 아님 = 이미지 파일만 가능합니다. 라고 출력
+    </h1>
+    <form action="">
+        <input type="text" id="file">
+    <button type="button" id="gon">전송</button>
+    </form>
+    <h3 id="check"></h3>
+    <script>
+        //입력받은 filename가 이미지 확장자가 맞으면 true 아니면 false
+        //대소문자 상관없음
+        //jpg, gif, png, jpeg, bmp
+        //match(값...) 있다면 true, 없다면 false
+        //정규식 /값/gi
+        //fn.toLowerCase() : 소문자, fn.toUpperCase() : 소문자, 
+        document.getElementById('gon').addEventListener('click',function(){
+            let fn = document.getElementById('file').value;
+            if(fn.substring(fn.indexOf('.'),fn.lengt.
+            h).toLowerCase().match("jpg", "gif", "png", "jpeg", "bmp") && fn.endWith()){
+                document.getElementById('check').innerText=`정상파일임다.`
+            }else{
+                document.getElementById('check').innerText=`이미지파일만 가능함다.`
+            }
+        })
+    </script>
+
+</body>
+</html>

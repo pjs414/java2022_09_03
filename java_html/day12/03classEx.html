@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        User class 생성 (name, age) +> 해당하는 이름과 나이 출력하기
+        이름, 나이, 성임/미성년자 출력
+        나이가 20대 미만이면 미성년자/성인
+    </h1>
+    <script>
+        class User{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+
+            printU(){
+                if(this.age<20){
+                    return `${this.name}, ${this.age}  미성년자`;
+                }else{
+                    return `${this.name}, ${this.age}  성인`;
+                }
+            }
+        }
+        const yung = new User('yung',20);
+        const yang = new User('yang',19);
+        console.log(yung.printU());
+        console.log(yang.printU());
+        //user2 하나 더 생성
+        //이름, 생년월일, 나이, 성인/미성년자.
+        class User2{
+            constructor(name,birth){
+                this.name=name;
+                this.birth=birth;
+            }
+            
+            printU2(){
+                let now = new Date();
+                let age = now.getFullYear()-1900-this.birth.slice(0,2);
+                if(age<20){
+                    return `${this.name}, ${this.birth}, ${age}, 미성년자`
+                }else{
+                    return `${this.name}, ${this.birth}, ${age}, 성인`
+                }
+            }
+        }
+        const yung2 = new User2('yung','95-4-14');
+        const yang2 = new User2('yang','66-11-28');
+        console.log(yung2.printU2());
+        console.log(yang2.printU2());
+    </script>
+</body>
+</html>

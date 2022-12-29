@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ItemList 예제</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                text-align: center;
+            }
+            h1 {
+                padding: 40px 0;
+            }
+            #container {
+                width: 700px;
+                display: inline-block;
+            }
+            #inputBox {
+                height: 100px;
+                background-color: rgb(192, 240, 255);
+            }
+            #input {
+                padding: 0;
+                width: 70%;
+                height: 40px;
+                border: none;
+            }
+            #button {
+                width: 50px;
+                height: 40px;
+                border: none;
+                background-color: white;
+                position: relative;
+                top: 1.5px;
+            }
+            form {
+                padding-top: 27px;
+            }
+            li {
+                padding-left: 30px;
+                list-style-type: none;
+                height: 50px;
+                text-align: left;
+                line-height: 50px;
+                background-color: rgb(249, 249, 249);
+                border: 2px solid rgba(0, 0, 0, 0);
+                transition: all 0.2s ease-in-out;
+                color: gray;
+                font-weight: bold;
+            }
+            li:hover {
+                border: 2px solid rgba(0, 0, 0, 0.3);
+            }
+            li:nth-of-type(even) {
+                background-color: rgb(241, 241, 241);
+            }
+            .delete {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-top: 5px;
+                float: right;
+                background-color: rgba(0, 0, 0, 0);
+                border: 0 solid rgba(0, 0, 0, 0);
+                border-radius: 100%;
+                transition: all 0.2s ease-in-out;
+                color: gray;
+                font-weight: bold;
+            }
+            .delete:hover {
+                background-color: powderblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>여행 준비물 점검 목록</h1>
+        <div id="container">
+            <div id="inputBox">
+                <form action="">
+                    <input type="text" id="input" autofocus="true" />
+                    <button type="button" id="button">추가</button>
+                </form>
+            </div>
+            <div id="printBox"></div>
+            <script>
+                let count = 0;
+                document.getElementById("button").addEventListener("click", function () {
+                    let text = document.getElementById("input").value;
+                    if (text != "") {
+                        count++;
+                        document.getElementById("printBox").innerHTML += `
+                        <li id="li${count}">${text}<button type="button" class="delete" 
+                            id="delete${count}" onclick="deleteLi(this)">?</button></li>`;
+                        document.getElementById("input").value = null;
+                        document.getElementById("input").focus();
+                    }
+                });
+                function deleteLi(e) {
+                    var buttonNum = e.id.substr(6);
+                    var deleteLi = document.getElementById("li" + buttonNum);
+                    deleteLi.remove();
+                }
+                document.addEventListener("click", (e) => {
+                    if (e.target.id.includes("li")) {
+                        let check = document.getElementById(e.target.id);
+                        if (check.style.textDecoration == "line-through red") {
+                            check.style.textDecoration = "none";
+                        } else {
+                            check.style.textDecoration = "line-through red";
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>

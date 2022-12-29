@@ -1,0 +1,148 @@
+#mainImage {
+    background-image: url(/project/image/main/main0.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1200px;
+    height: 550px;
+    margin: 0 0 30px 0;
+    transition: all 0.5s ease;
+}
+#mainImage > div {
+    width: 100%;
+    min-width: 1200px;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+#before,
+#next {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    color: white;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+#before {
+    left: 10%;
+}
+#next {
+    right: 10%;
+}
+#container {
+    width: 1200px;
+    margin: auto;
+}
+#text {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(63, 63, 63);
+    text-align: center;
+    padding: 30px 0 60px 0;
+}
+#text > span {
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(204, 204, 204);
+}
+.category {
+    display: inline-block;
+    width: 330px;
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+#chair,
+#table,
+#closet,
+#bed {
+    margin-bottom: 50px;
+    margin-right: 55px;
+}
+#sofa,
+#light {
+    margin-bottom: 50px;
+}
+.category > a > img {
+    width: 100%;
+    filter: brightness(95%);
+    transition: all 0.5s ease;
+}
+.category > a:hover > img {
+    filter: brightness(30%);
+    transform: scale(1.4, 1.4);
+}
+.category > a > div {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.7s ease;
+}
+.product {
+    display: inline-block;
+    width: 230px;
+    padding: 30px;
+    transition: all 0.5s ease;
+}
+.product:hover {
+    transform: scale(1.1, 1.1);
+}
+.product > a {
+    color: black;
+    text-decoration: none;
+}
+.product > a > .productImage {
+    height: 230px;
+    overflow: hidden;
+}
+.product > a > .productImage > img {
+    width: 100%;
+    object-fit: cover;
+}
+.product > a > .productName {
+    font-family: font1;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px;
+}
+.product > a > .productPrice {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+.viewButton {
+    width: 240px;
+    height: 50px;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 50px;
+    color: rgb(185, 185, 185);
+    font-size: 20px;
+    font-family: font3;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+    transition: all 0.5s ease;
+}
+.viewButton:hover {
+    background-color: orange;
+    color: white;
+    border: none;
+}
+#noneView:hover {
+    background-color: rgb(255, 52, 113);
+    color: white;
+    border: none;
+}

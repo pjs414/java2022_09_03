@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        가격, 할인율 할인가격 계산하기 버튼을 클릭하면
+        원래가격, 할인율, 할인된 금액, 지불금액을 출력하는 이벤트 function 작성
+    -->
+    <form action="" id="sale">
+        <fieldset>
+            <legend>물건</legend>
+            가격 : <input type="text" id="price">
+            할인율 : <input type="text" id="psale">
+            <button type="button" onclick="calc()">할인가격 계산하기</button>
+        </fieldset>
+    </form>
+    <h3 id="sum"></h3>
+    <script>
+        function calc(){
+            let price = document.getElementById('price').value;
+            let psale = (document.getElementById('psale').value)/100;
+            let saleprice = 0;
+            let reprice = 0;
+
+
+            if(psale>1 || psale<0){
+                alert(`0~100 사이 값을 입력해주세요.`);
+            } else{
+                saleprice = price*psale;
+                reprice = price-saleprice;
+            }
+            document.getElementById('sum').innerText=
+            `원래가격 ${price}  할인율 ${(psale*100)}% 할인된 금액 ${saleprice}원 지불금액 ${reprice}원`;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            width: 70%;
+            border-width: 2px 1px;
+            border-color: black;
+            border-style: solid;
+            border-collapse: collapse;
+
+        }
+        th,td{
+            border-width: 1px 0px;
+            border-color: black;
+            border-style: solid;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Q1 데이터를 입력할 인원수를 받고
+        각 개인의 html,css,js 과목의 점수를 입력하면
+        각 과목의 점수, 총점, 평균 html의 table로 출력하기
+    </h1>
+    <p>
+        인원수 : <input type="number" id="peopleNum"> <button id="peopleBtn">실행</button>
+    </p>
+    <div id="inputArea"></div>
+    <button id="sbmBtn">제출</button>
+    <div id="printArea">
+        <table id="printTable">
+        </table>
+    </div>
+    <script>
+        let peo=0;
+        document.getElementById('peopleBtn').addEventListener('click',()=>{
+            document.getElementById('inputArea').innerHTML='';
+            peo = document.getElementById('peopleNum').value;
+            for(let i=1; i<=peo;i++){
+                document.getElementById('inputArea').innerHTML+=
+                `이름 : <input type="text" id="name${i}"> html : <input type="number" id="html${i}"> 
+                css : <input type="number" id="css${i}"> js : <input type="number" id="js${i}"><br>`
+            }
+        })
+        document.getElementById('sbmBtn').addEventListener('click',()=>{
+        document.getElementById('printTable').innerHTML=
+        `<tr>
+                <th>이름</th>
+                <th>html</th>
+                <th>css</th>
+                <th>js</th>
+                <th>총점</th>
+                <th>평균</th>
+                <th>등급</th>
+            </tr>`
+            const map = new Map();
+            for(let i=1; i<=peo;i++){
+                let nam = document.getElementById(`name${i}`).value;
+                let htm = Number(document.getElementById(`html${i}`).value);
+                let cs = Number(document.getElementById(`css${i}`).value);
+                let j = Number(document.getElementById(`js${i}`).value);
+                map.set(nam,{html:htm,css:cs,js:j});
+            }
+            
+            map.forEach(function(v,k,s){
+                let sum=v.html+v.css+v.js;
+                let grade = '';
+                if((sum)/3>=90){ grade ='A'}else 
+                if((sum)/3>=80){ grade ='B'}else 
+                if((sum)/3>=70){ grade ='C'}else 
+                if((sum)/3>=60){ grade ='D'}else{grade ='F'}
+            document.getElementById('printTable').innerHTML+=
+            `<tr>
+                <td>${k}</td>
+                <td>${v.html}</td>
+                <td>${v.css}</td>
+                <td>${v.js}</td>
+                <td>${sum}</td>
+                <td>${((sum)/3).toFixed(2)}</td>
+                <td>${grade}</td>
+            </tr>`
+        })
+            
+        })
+    </script>
+</body>
+</html>

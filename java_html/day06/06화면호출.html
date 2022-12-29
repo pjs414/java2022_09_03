@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myform">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+            <button type="button" id="sbmBtn" onclick="clickEvent()">계산</button>
+        </fieldset>
+    </form>
+    <h3 id="sum"></h3>
+    <script>
+        function clickEvent(){
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+            let sum =0;
+            let avg=0;
+            console.log(kor);
+            //만약 점수가 0~100 값이 아닐 경우 경고창(alert : 경고창)
+            if(kor<0 || kor>100 || eng <0 || eng>100 || math <0 || math>100){
+                alert(`0~100 사이 값을 입력해주세요.`);
+            }else{
+                kor = parseInt(kor);
+                eng = Number(eng);//number은 실수만 가능 perseint는 정수만
+                math = parseInt(math);
+                sum = kor+eng+math;
+                avg = sum/3;
+            }
+
+            //결과 위치에 결과를 출력
+            //숫자의 결과가 없으면 nan으로 출력됨
+            document.getElementById('sum').innerHTML=
+            `이름 : ${name}, 합계: ${sum} <br> 평균: ${Math.round(sum/3*10)/10} 합격여부 ${avg>=60 ? '합격': '불합격'} ${avg>=90 ? 'A': avg>=80 ? 'B': avg>=70 ? 'C': avg>=60 ? 'D' : 'F'} `;
+            console.log(name, sum);
+            
+            //평균, 합격여부, 등급
+            //합격여부 : 평균이 60 이상이면 합격, 아니면 불합격
+            //math.round, math.random ... 사용 가능
+            //문자열 ㅌ아입에서 소수자리를 표현.toFixed(n)
+            //num = 123.456789; num.toFixed(2);  123.46 // string 형식
+            //math.round(num*100)/100; 123.45//number형식
+
+        }
+    </script>
+</body>
+</html>

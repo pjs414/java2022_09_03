@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 그리드</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+
+        }
+        div{
+            width: 100%;
+        }
+        .header{
+            height: 60px;
+            background-color: aquamarine;
+        }
+        .main-img{
+            height: 350px;
+            background-color: violet;
+        }
+        .subject{
+            height: 320px;
+            background-color:blue;
+            transition:all ease 0.3s;
+        }
+        .content{
+            height: 380px;
+            background-color: yellow;
+            transition:all ease 0.3s;
+        }
+        .sub{
+            height: 200px;
+            background-color: green;
+            transition:all ease 0.3s;
+        }
+        .footer{
+            height: 200px;
+            background-color: gainsboro;
+        }
+        
+        /*@media screen and (min-width:)
+            576px-모바일
+            768px-테블릿
+            992px - 데스크탑 작은화면
+            1200px - 와이드화면*/
+            /*모바일우선 / 데스크탑 우선*/
+            /*모바일우선 : min-width(최소 ~부터 적용)
+            |작은 가로폭~ 큰 가로폭 순으로 작성*/
+            /*데스크탑 우선 : max-width(최대 ~까지 적용)
+            |큰 가로폭~ 작은 가로폭 순으로 작성*/
+            @media screen and (min-width: 992px){
+                .header{
+                    height: 60px;
+                }
+                .main-img{
+                    height: 550px;
+                }
+                .subject{
+                    width: 50%;
+                    height: 400px;
+                    float: left;
+                }
+                .content{
+                    width: 50%;
+                    float: right;
+                    height: 200px;
+                }
+                .sub{
+                    width: 50%;
+                    float: right;
+                    height: 200px;
+                }
+                .footer{
+                    clear: both;
+                    height: 200px;
+                 }
+            }
+            
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main-img"></div>
+    <div class="subject"></div>
+    <div class="content"></div>
+    <div class="sub"></div>
+    <div class="footer"></div>
+</body>
+</html>

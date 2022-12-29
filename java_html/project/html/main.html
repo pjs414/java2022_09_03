@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=q" />
+        <title>main</title>
+        <link rel="stylesheet" href="/project/css/header.css" />
+        <link rel="stylesheet" href="/project/css/section_main.css" />
+        <link rel="stylesheet" href="/project/css/footer.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="/project/js/list.js"></script>
+    </head>
+    <body>
+        <header id="header"></header>
+        <section id="section">
+            <div id="mainImage">
+                <div>
+                    <button type="button" id="before" onclick="before()">
+                        <span class="material-symbols-outlined"> arrow_back_ios </span>
+                    </button>
+                    <button type="button" id="next" onclick="next()">
+                        <span class="material-symbols-outlined"> arrow_forward_ios </span>
+                    </button>
+                </div>
+            </div>
+            <div id="container">
+                <div id="text">
+                    <span>Category</span>
+                </div>
+                <div id="categoryBox">
+                    <div class="category" id="chair">
+                        <a href="/project/html/category/category_chair.html">
+                            <img src="/project/image/category/chair.jpg" alt="" />
+                            <div>Chair</div>
+                        </a>
+                    </div>
+                    <div class="category" id="table">
+                        <a href="/project/html/category/category_table.html">
+                            <img src="/project/image/category/table.jpg" alt="" />
+                            <div>Table</div>
+                        </a>
+                    </div>
+                    <div class="category" id="sofa">
+                        <a href="/project/html/category/category_sofa.html">
+                            <img src="/project/image/category/sofa.jpg" alt="" />
+                            <div>Sofa</div>
+                        </a>
+                    </div>
+                    <div class="category" id="bed">
+                        <a href="/project/html/category/category_bed.html">
+                            <img src="/project/image/category/bed.jpg" alt="" />
+                            <div>Bed</div>
+                        </a>
+                    </div>
+                    <div class="category" id="closet">
+                        <a href="/project/html/category/category_closet.html">
+                            <img src="/project/image/category/closet.jpg" alt="" />
+                            <div>Closet</div>
+                        </a>
+                    </div>
+                    <div class="category" id="light">
+                        <a href="/project/html/category/category_light.html">
+                            <img src="/project/image/category/light.jpg" alt="" />
+                            <div>Light</div>
+                        </a>
+                    </div>
+                </div>
+                <div id="text">
+                    <span>Product</span>
+                </div>
+                <div id="productBox"></div>
+                <button type="button" class="viewButton" id="moreView" onclick="plusViewCount()">더보기</button>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+        <script src="/project/js/header_footer.js"></script>
+        <script src="/project/js/main.js"></script>
+    </body>
+</html>

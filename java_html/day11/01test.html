@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Q1. 2자리 양의 정수를 입력하고, 그 수까지의 홀수 합과 짝수 합을 출력하기
+    </h1>
+    2자리 양의 정수 입력 : <input type="text" id="input">
+    <button type="button" onclick="sum()">출력</button>
+    <h1 id="print"></h1>
+    <script>
+        function sum(){
+            let num =document.getElementById('input').value;
+            const totals ={sum1:0, sum2:0}
+            if(num>=10 && num<100){
+                for(let i=0; i<=num;i++){
+                    if(i%2==0){ totals.sum1+=i; }else{ totals.sum2+=i;}
+                }
+                document.getElementById('print').innerText=`홀수의 합 : ${totals.sum2}, 짝수의 합 : ${totals.sum1}`;
+            }else{
+                alert(`${num}은 잘못된 입력입니다.`);
+                document.getElementById('input').focus;
+            }
+        }
+    </script>
+</body>
+</html>

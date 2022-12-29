@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+    @font-face{
+            font-family: gugi;
+            src: url(/font/NanumBrushScript-Regular.ttf);
+            text-align: center;
+        }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gugi;
+    }
+    body{
+        background-color: rgb(30, 239, 247);
+    }
+    .material-symbols-outlined{
+        width: 400px;
+        height: 200px;
+        font-size: 15rem;
+        transition: all 0.3s;
+    }
+    .material-symbols-outlined:hover{
+        font-size: 14rem;
+        transform: rotate(10deg);
+    }
+    #aaa{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    .lg-text{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .sm-text{
+        font-size: 1rem;
+    }
+    #dynamic{
+        position: relative;
+        display: inline-block;
+        /* 커서 딱 붙음 방지 */
+        padding-right: 10px; 
+        color: black;
+        font-size: 1.5rem;
+    }
+    #dynamic::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4px;
+        height: 100%;
+        background-color: white;
+    }
+    #dynamic.active::after{
+        display: none;
+    }
+    #cc{
+        width: 600px;
+        height: 300px;
+        border: none;
+        background-color: rgba(30, 240, 247, 0.562);
+        border-radius: 50px;
+        box-shadow: -3px -3px 3px rgba(31, 221, 255, 0.562) 3px 3px -3px rgba(31, 221, 255, 0.562);
+        color: white;
+    }
+    #addb{
+        border: none;
+        width: 100px;
+        background-color:  rgb(21, 158, 163);
+        border-radius: 50px;
+        box-shadow: -3px -3px 3px rgba(31, 221, 255, 0.562);
+        color: white;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <div id="aaa">
+        <h1>
+            <button type="button" id="cc">
+                <span class="material-symbols-outlined">cached</span>
+            </button>
+        </h1>
+        <p id="dynamic" class="lt-text"></p><br>
+        <button type="button" onclick="addT()" id="addb">단어추가</button>
+    </div>
+    <script>
+        let target = document.querySelector('#dynamic');
+        let chart =[' '];
+        let obj;
+        let obje;
+
+        document.querySelector('#cc').onclick=()=>{
+            if(document.querySelector('.material-symbols-outlined').innerText=='cached'){
+                document.querySelector('.material-symbols-outlined').innerText='sync_disabled';
+                clearTimeout(obje);
+                clearTimeout(obj);
+            }else{
+                document.querySelector('.material-symbols-outlined').innerText='cached';
+                setTimeout(resetT,3000);
+            }
+        }
+        function addT(){
+            let info = window.prompt('출력시킬 단어를 입력해주세요','초기값');
+            if(info !=null){
+                chart.push(info);
+                if(chart.indexOf(' ')==0){
+                    chart.splice(0,1);
+                }
+            }
+        }
+        function randomT(){
+            let str = chart[Math.floor(Math.random()*(chart.length))];
+            let strar = str.split("");
+            return strar;
+        }
+        function resetT(){
+            target.innerText='';
+            dynamic(randomT());
+        }
+        function dynamic(rnadom){
+            if(rnadom.length>0){
+                target.textContent+=rnadom.shift();
+                obj= setTimeout(function(){dynamic(rnadom)}, 80);
+            }else{
+                obje= setTimeout(resetT,2000);
+            }
+        }
+        dynamic(randomT());
+        function blink(){
+            target.classList.toggle('active');
+        }
+        setInterval(blink,500);
+    </script>
+</body>
+</html>

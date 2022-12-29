@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>reviewBoard</title>
+        <link rel="stylesheet" href="/project/css/header.css" />
+        <link rel="stylesheet" href="/project/css/reviewBoard.css" />
+        <link rel="stylesheet" href="/project/css/footer.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <header id="header"></header>
+        <section id="section">
+            <div id="container">
+                <h2>Review</h2>
+                <form action="">
+                    <table id="content">
+                        <tr>
+                            <td class="td2 td0">
+                                <div class="td1">제목</div>
+                                <input type="text" autofocus />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <div class="td1">작성자</div>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td3">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="안녕하세요 ezen funnyour입니다 :) &#13;&#10;&#13;&#10; 구매 후 리뷰를 남겨주시면 &#13;&#10; - 텍스트리뷰는 500point &#13;&#10; - 포토리뷰는 2000point &#13;&#10; 각각 리뷰등록 후 3일안에 적립됩니다. &#13;&#10;&#13;&#10; 그 외 궁금하신 사항은 Notice를 먼저 확인해주세요. &#13;&#10; 문의전화 032-1234-5678"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input class="fileInput" type="file" value="file1" /></td>
+                        </tr>
+                        <tr>
+                            <td><input class="fileInput" type="file" value="file2" /></td>
+                        </tr>
+                        <tr>
+                            <td><input class="fileInput" type="file" value="file3" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    <small>
+                                        - 파일 확장자가 zip,pdf,hwp,doc,docx,txt,xls,xlsx,ppt,pptx,jpg,jpeg,gif,png,egg,dwg,max,psd,ai인 파일만 업로드하실 수 있습니다.
+                                        <br />
+                                        <span style="color: red">(파일명은 특수문자 *,#,$ 등 & 공백 사용금지!)</span>
+                                        <br />
+                                        - 파일 업로드 시, 첨부파일 1개당 200MB 까지 가능합니다.
+                                        <br />
+                                    </small>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="btn">
+                                <button type="reset">취소</button>
+                                <button type="submit">등록</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div id="listbtn">
+                    <button type="button" id="list" onclick="location.href='review.html'">목록</button>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+        <script src="/project/js/header_footer.js"></script>
+    </body>
+</html>

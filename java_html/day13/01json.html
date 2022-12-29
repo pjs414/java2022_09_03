@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        json: javascript Object Notation : 자바스크립트 객체 표기법
+    </h1>
+    <ul>
+        <li>
+            데이터의 요청 및 응답처리에 필요한 데이터의 표준 형식을 제공하는 타입
+        </li>
+        <li>
+            백엔드 언어의 종류에 관계없이 데이터 송수신을 단일 형식으로 통일함
+        </li>
+        <li>
+            데이터의 전송은 모두 string 타입으로 이루어지기 때문에 송수신 모듈에서 타입의 변환이 필요함
+        </li>
+        <li>
+            서버로 데이터를 보낼 때 > json to string > JSON.stringify(jsobject)
+        </li>
+        <li>
+            서버로부터 데이터를 받을 때 > json to string > JSON.parse(stringData)
+        </li>
+    </ul>
+    <script>
+        const stringData = '{"id": "0001", "type":"donut","name":"cake","image":{"url":"image/0001.jpg","width":200, "height":200},"thumbnail":{"url":"image/thumbnails/0001.jpg","widTh":32,"height":32}} '
+        let parsedData=JSON.parse(stringData);
+        console.log(parsedData);
+        
+        
+        //parsedData를 console key : value 형태로 출력해보기 for(in)
+        //typeof==object로도 빼넬 수 있음
+        for(const k in parsedData){
+            console.log(`${k} : ${parsedData[k]}`);
+            if(k=="image"){
+                for(const j in parsedData.image){
+                    console.log(`${j} : ${parsedData.image[j]}`);
+                }
+            }else if(k=="thumbnail"){
+                for(const j in parsedData.thumbnail){
+                    console.log(`${j} : ${parsedData.thumbnail[j]}`);
+                } 
+            }
+        }
+        const myInfo = {
+            "name":'qkweknf',
+            "age" : 28,
+            "blood" : "a",
+            "addr" : "incheon"
+        }
+
+        let myInfoString = JSON.stringify(myInfo);
+        console.log(myInfoString);
+        console.log(typeof myInfoString);
+
+    </script>
+</body>
+</html>

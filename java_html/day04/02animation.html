@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        animation-timing-duration : 애니매이션 총 시간(등속)
+        animation-delay: animation 시작전 대기시간
+        animation-dirction : 진행방향 ( 정방향,역방향...)
+        animation-fill-mode : animation을 마친 후 어떤 상태로 만들지 결정하는 모드
+        animation-play-state : animation을 진행할지 여부(진행할지 멈출지 설정)
+        */
+        .ani{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 1px solid black;
+            top:200px;
+            left:10%;
+            animation-name: mov, scale;
+            animation-duration: 5s, 0.7s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes mov{
+            0%{
+                top:200px;
+                left:10%
+            }
+            10%{
+                top:10%
+
+            }
+            30%{
+                top:5%;
+                left: 18%;
+            }
+            50%{
+                top:30%;
+                left: 25%;
+            }
+            70%{
+                top: 20%;
+                left: 50%;
+            }
+            80%{
+                top: 15%;
+                left: 40%;
+            }
+            90%{
+                top:10%;
+                left:0%;
+            }
+            100%{
+                top:200px;
+                left:10%;
+            }
+        }
+        @keyframes scale{
+            0%{
+                width: 100px;
+                height: 100px;
+            }
+            33%{
+                width: 50px;
+                height: 50px;
+            }
+            66%{
+                width: 150px;
+                height: 150px;
+            }
+            100%{
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="ani"></div>
+    <br>
+
+</body>
+</html>

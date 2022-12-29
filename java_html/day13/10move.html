@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body{
+            background-color: black;
+        }
+        .icon{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(-50%,-50%);            
+        }
+        .material-symbols-outlined{
+            color: greenyellow;
+            font-size: 4rem;
+            transition : transform 1s linear;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="icon">
+        <span class="material-symbols-outlined">sync</span>
+    </div>
+    <script>
+        let con = document.querySelector('.icon');
+        console.log(con.style.transform);
+        //마우스 움직임에 따라 좌표 변경
+        document.addEventListener('mousemove',(e)=>{
+            let con = document.querySelector('.icon')
+            con.style.transform= `translate(${e.pageX}px, ${e.pageY}px)`
+            document.querySelector('.material-symbols-outlined').style.transform = `rotate(${e.pageX+e.pageY}deg)`
+        })
+    </script>
+</body>
+</html>

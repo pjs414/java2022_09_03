@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>updown game</h1>
+    <ul>
+        <li>
+            랜덤숫자 만들기 버튼을 클릭하면 컴퓨터 랜덤으로 1~50사이 숫자 1개 생성
+        </li>
+        <li>
+            숫자가 생성되면 컴퓨터가 랜덤을 순자를 생성했습니다 안내문구출력
+        </li>
+        <li>
+            input 창에 숫자를 입력하고 버튼 클릭
+        </li>
+        <li>
+            랜덤수 체크해 높은숫자면 down 낮은 숫자면 up 출력
+        </li>
+        <li>
+            슛자가 맞으면 정답 컴숫자는 ~ 출력
+        </li>
+        <li>
+            횟수가 5회가 넘어가면 횟수제한으로 끝
+        </li>
+    </ul>
+    <h1><button type="button" onclick="rnum()">숫자생성</button></h1>
+    <input type="number" id="mynum" max="50" min="1">
+    <h2><button type="button" onclick="comparenum2()">check</button></h2>
+    <h3 id="sen"></h3>
+    <script>
+
+        let num=0;
+        let cnt=0;
+        function rnum(){
+            num=Math.floor((Math.random()*50)+1);
+            document.getElementById('sen').innerText=`랜덤숫자 생성함`
+            cnt=0;
+        }
+
+        function cnum(){
+            let cnum= document.getElementById('mynum').value;
+            
+            if(num==0){
+                document.getElementById('sen').innerText=`랜덤숫자를 생성해주세요`;
+            }else if(num>cnum){
+                cnt++;
+                document.getElementById('sen').innerText=`up`;
+                if(cnt==5){
+                    document.getElementById('sen').innerHTML+=`<br>실행횟수 5회를 모두 사용하였습니다. 숫자는${num} ${cnt}회 실행`;
+                    num =0;
+                }
+            }else if(num<cnum){
+                cnt++;
+                document.getElementById('sen').innerText=`down`;
+                if(cnt==5){
+                    document.getElementById('sen').innerHTML+=`<br>실행횟수 5회를 모두 사용하였습니다. 숫자는${num} ${cnt}회 실행`;
+                    num =0;
+                }
+            }else if(cnum>50 && cnum<1){
+                document.getElementById('sen').innerText=`숫자 범위를 넘어갔습니다.`;
+                
+            }else{
+                document.getElementById('sen').innerText=`정답. 숫자는${num} ${cnt}회 실행`;
+                
+            }
+        }
+        function comparenum2(){
+            if(cnt<5){
+                document.getElementById('sen').innerText=
+                `횟수${cnt+1}:`;
+                cnt++;
+                let mynum =Number(document.getElementById('mynum').value);
+                if(mynum>0 && mynum <=50){
+                    document.getElementById('sen').innerText+=
+                    (num==mynum) ? `정답입니다. 컴터숫자는 ${num}입니다.` :
+                    (num>mynum) ? `UP` : `DOWN`;
+                }else{
+                    document.getElementById('sen').innerText=
+                    `1~50사이 숫자만 가능합니다`;
+                }
+            }else{
+                document.getElementById('sen').innerText=
+                `5회 다씀`;
+
+            }
+        }
+
+    </script>
+</body>
+</html>

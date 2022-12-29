@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display-table</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0%;
+        }
+        .boxwrap{
+            display: table;
+            width: 100%;
+            /* background-color: aqua; */
+            table-layout: fixed;/*테이블 고정*/
+        }
+        .boxwrap>.box{
+            /*부모속성 (table)안에 들어가는 셀(표 안의 셀)*/
+            display: table-cell;
+            /*세로 가운데 정렬*/
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+        }
+        .thumb img{
+            width: 100%;
+            height: 100%;
+
+        }
+        .title_item{
+            display: block;
+            font-size: 1em;
+        }
+        .desc_item{
+            font-size: 0.7em;
+        }
+        .price{
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+        .title_item, .desc_item{
+            margin-top: 10px;
+        }
+        .box .link{
+            text-decoration: none;
+            color: black;
+            position: relative;
+        }
+        .box .link:hover{
+            text-decoration: underline;
+        }
+        img:hover{
+            transform: scale(1.1,1.1);
+        }
+        img{
+            transition: transform 0.3s;
+            width: 100%;
+            position: absolute;
+            
+            
+        }
+        .thumb{
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+        }
+        .m:hover{
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <!-- 각각의 box들 추가 -->
+        <!-- 첫박스 set-->
+        <div class="box">
+            <a href="#" class="link">
+                <span class="thumb">
+                    <img src="/image/곤지암.jpg" alt="..." class="m">
+
+                </span>
+                <strong class="title_item">곤지암 호텔</strong>
+                <p class="desc_item">여름엔 시원하게 하룻밤!</p>
+                <p class="price">1박 7000원</p>
+            </a>
+        </div>
+       
+        <div class="box">
+            <a href="#" class="link">
+                <span class="thumb">
+                    <img src="/image/우주여행.jpg" alt="우주선">
+                </span>
+                <strong class="title_item">화성여행</strong>
+                <p class="desc_item">화성여행 임박!</p>
+                <p class="price">130억</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="#" class="link">
+                <span class="thumb">
+                    <img src="/image/일본.jpg" alt="...">
+                </span>
+                <strong class="title_item">일본여행</strong>
+                <p class="desc_item">이번 초특가!</p>
+                <p class="price">왕복 140부터</p>
+            </a>
+        </div>
+      
+        <div class="box">
+            <a href="#" class="link">
+                <span class="thumb">
+                    <img src="/image/리조트.webp" alt="우주선">
+                </span>
+                <strong class="title_item">가평리조트</strong>
+                <p class="desc_item">수영장 딸린 리조트!</p>
+                <p class="price">2박 3일 30만원</p>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--조건문(if-else, switch)-->
+    <style>
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        if(조건절){
+            code;
+        }
+        조건절은 true/false로 구분되는 문이 와야함.
+    </h1>
+    <h3>
+        다중 조건문 : else if(조건절) {} 사용
+    </h3>
+    <h3>
+        switch(변수 / 식){
+            case 값 : 구문 ; break;
+            case 값 : 구문 ; break;
+            case 값 : 구문 ; break;
+            default : 구문;
+        }
+    </h3>
+    <h3>
+        반복문 : for, while, do~while
+        java에서 한 것과 같은 형태로 사용가능.
+    </h3>
+    <h3>
+        while(값){
+            code;
+        }
+        값 : true일때 반복, 조건이 항상 true면 무한루프
+    </h3>
+    <h3>구구단 출력</h3>
+    <button type="button" onclick="gugu()">구구단출력</button>
+    <table id="gugudan"></table>
+    <script>
+        let count=0;
+        while(count < 10){
+            console.log(count);
+            count++
+        }
+        /*7단만 콘솔에 찍기*/
+        function gugu(){
+            let dan=1;
+            let incre =1;
+            let str='<tr>';
+            // document.getElementById('gugudan').innerHTML=
+            //     `<tbody><tr>`;
+            while(dan<10){
+                str+= `<td>${dan}*${incre}=${dan*incre}</td> `;
+                incre++;
+                if(incre==10){
+                    str+=`</tr><tr>`;
+                    incre=1;
+                    dan++;
+                }
+            }
+            document.getElementById('gugudan').innerHTML+=  str;
+        }
+    </script>
+    
+</body>
+</html>

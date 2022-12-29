@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>계산기 만들기</h1>
+    숫자 2개와 연산자를 입력받아 연산의 겨로가르 출력
+    입력받는 input*2 
+    연산자는 button + - * /
+    결과창 h3 두 수의 연산결과 출력
+<br>
+    <input type="number" id="num1"><span id="com"></span><input type="number" id="num2"><br>
+    <button type="button" onclick="calca('+')">+</button>
+    <button type="button" onclick="calca('-')">-</button>
+    <button type="button" onclick="calca('*')">*</button>
+    <button type="button" onclick="calca('/')">/</button>
+    <button type="button" onclick="re()">=</button>
+    <h3 id="result"></h3>
+
+    <script>
+        let calc = '';
+        
+        function calca(value){
+            calc = value;
+            document.getElementById('com').innerText=calc;
+        }
+        function re(){
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            switch(calc){
+                case '+' : result = num1+num2; break;
+                case '-' : result = num1-num2; break;
+                case '*' : result = num1*num2; break;
+                case '/' : result = num1/num2; break;
+            }
+            document.getElementById('result').innerText=result;
+        }
+
+    </script>
+</body>
+</html>

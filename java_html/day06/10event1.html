@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>로그인</legend>
+            id : <input type="text" id="userid"><br>
+            pw : <input type="password" id="pw"><br>
+            birth : <input type="date" id="birth"><br>
+            pin : <input type="number" id="pin"><br>
+            <button type="button" id="gte">전송</button>
+            <button type="button" id="nte">리스트로 출력</button>
+        </fieldset>
+    </form>
+    <h3 id="info"></h3>
+    <ol id="ol"></ol>
+    <script>
+        document.getElementById('gte').addEventListener('click',()=>{
+        let id = document.getElementById('userid').value;
+        let pw = document.getElementById('pw').value;
+        let birth = document.getElementById('birth').value;
+        let pin = document.getElementById('pin').value;
+        document.getElementById('info').innerHTML=
+        `id(${typeof id}) = ${id} <br> pw(${typeof pw}) = ${pw}<br> birth(${typeof birth}) = ${birth} <br> pin(${typeof pin}) = ${pin}`;
+
+        })
+        document.getElementById('nte').addEventListener('click',()=>{
+        let id = document.getElementById('userid').value;
+        let pw = document.getElementById('pw').value;
+        let birth = document.getElementById('birth').value;
+        birth = new Date(birth);
+        let pin = parseInt(document.getElementById('pin').value);
+        document.getElementById('info').innerHTML=
+        `<li>id(${typeof id}) = ${id}</li> <li>pw(${typeof pw}) = ${pw}</li> <li>birth(${typeof birth}) = ${birth}</li>  <li>pin(${typeof pin}) = ${pin}</li>`;
+
+        })
+    </script>
+</body>
+</html>

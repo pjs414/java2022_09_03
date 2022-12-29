@@ -1,0 +1,29 @@
+#container {
+    width: 1200px;
+    margin: auto;
+}
+h2 {
+    font-family: font3;
+    font-size: 30px;
+    margin: 50px 0 50px 0;
+}
+#uid,
+#name,
+#email,
+#check {
+    width: 300px;
+    height: 40px;
+    border: 1px solid rgb(134, 134, 134);
+}
+#check {
+    background-color: rgb(54, 54, 54);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.div1 {
+    font-size: 14px;
+    width: 302px;
+    padding: 7px 0;
+    margin: auto;
+}

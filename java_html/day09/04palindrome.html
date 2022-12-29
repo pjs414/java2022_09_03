@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        팰린드롬 : 거꾸로 읽어도 같은 단어가 되는 단어들(회문)
+    </h1>
+    <ul>
+        <li>
+            단어를 입력받아서 팰린드롬 여부를 출력
+        </li>
+        <li>
+            팰린드롬 맞음./아님
+        </li>
+    </ul>
+    단어입력 : <input type="text" id="strData" >
+    <button type="button" onclick="check()">입력</button>
+    <h3 id="result"></h3>
+    <script>
+        function check(){
+            let cnt=0;
+            let word = document.getElementById('strData').value;
+            console.log(typeof word);
+            const w1 = word.split('');
+            const w3 = word.split(''); 
+            const w2 = [];
+            console.log(w1);
+            
+            for(let i=0;i<w1.length;i++){
+                w2.push(w3.pop());
+            }
+            for(let i=0;i<w1.length;i++){
+                if(w1[i]==w2[i]){
+                    cnt++;
+                }
+            }
+            console.log(w2);
+            console.log(cnt);
+            console.log(w1.length);
+
+            if(cnt==w1.length){
+                document.getElementById('result').innerText=`펠린드롬임`
+            }else{
+                document.getElementById('result').innerText=`펠린드롬dkaksd`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        배열의 정렬은 문자기반으로 정렬이 됨.
+    </h1>
+    <ul>
+        <li>
+            array.sort() :  순차정렬
+        </li>
+        <li>
+            array.reverse() : 역순정렬
+        </li>
+        <li>
+            정렬할 배열의 원소가 숫자일 경우 콜백함수를 이용하여 내부 연산기법을 황용하여 정렬
+        </li>
+        <li>
+            array.sort(function(a,b){return a - b}) : 숫자의 순차정렬<br>
+            array.sort(function(a,b){return b - a}) : 숫자의 역순정렬<br>
+        </li>
+        <li>
+            1~45까지 랜덤숫자를 6개를 생성하여 배열에 저장한 후 순차 정렬 => 출력
+        </li>
+    </ul>
+    <script>
+        const a =[];
+        for(let i=0; i<6; i++){
+            a[i]=Math.floor((Math.random()*45)+1);
+        }
+        console.log(a);
+        console.log(a.sort(function(a,b){return a-b}));
+        
+        const cars =[
+            {type: "volvo", year:2016},
+            {type: "bmw", year:2020},
+            {type: "kia", year:2018}
+        ];
+        //year기준으로 정렬
+        cars.sort(function(a,b){
+            return a.year - b.year;
+        })
+        console.log(cars);
+        //문자열기준으로 정렬
+        cars.sort(function(a,b){
+            let x = a.type.toLocaleLowerCase();
+            let y = b.type.toLocaleLowerCase();
+            if(x>y){return 1;}
+            if(x<y){return -1;}
+            return 0;
+        });
+        console.log(cars.reverse());
+        //배열의 값을 문자, 숫자 형태로 객체로 저장> 역순정렬
+        const b = ['ggd','rgg','zwi','hoe'];
+        console.log(b)
+
+        b.sort();
+        console.log(b)
+        b.reverse();
+        console.log(b)
+        b.sort(function(a,b){
+            let x = a.toLowerCase();
+            let y = b.toLowerCase();
+            if(x>y){return 1;}
+            if(x<y){return -1;}
+            return 0;
+        })
+        console.log(b)
+
+    </script>
+</body>
+</html>

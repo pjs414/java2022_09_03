@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>idFind</title>
+        <link rel="stylesheet" href="/project/css/header.css" />
+        <link rel="stylesheet" href="/project/css/idFind.css" />
+        <link rel="stylesheet" href="/project/css/footer.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <header id="header"></header>
+        <section>
+            <div id="container">
+                <h2>아이디찾기</h2>
+                <p>
+                    <div class="div1">회원유형</div>
+                    <select name="" id="member">
+                        <option value="indi">개인 회원</option>
+                        <option value="business">개인 사업자회원</option>
+                        <option value="corp">법인 사업자회원</option>
+                        <option value="fore">외국인회원</option>
+                    </select>
+                </p>
+                <br />
+                <p>
+                    <div class="div1">이름</div>
+                    <input type="text" id="name" /><br /><br />
+                    <div class="div1">이메일로 찾기</div>
+                    <input type="text" id="email" /><br /><br />
+                    <input type="submit" id="check" value="확인" />
+                </p>
+            </div>
+        </section>
+        <footer id="footer"></footer>
+        <script src="/project/js/header_footer.js"></script>
+        <script>
+            //이메일 입력후 확인을 누르면 ${이름}님 ${이메일id}로 보냈다고 alert창 띄워주기
+            let check = document.getElementById("check");
+            console.log(check.name);
+            check.addEventListener("click", () => {
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let emailch = "ezen@gmail.com";
+                console.log(name, email);
+                if (email != emailch) {
+                    alert("등록된 이메일이 없습니다.");
+                } else {
+                    alert(`${name}님 ${email}로 아이디를 보냈습니다.`);
+                    location.href = "login.html";
+                }
+            });
+        </script>
+    </body>
+</html>

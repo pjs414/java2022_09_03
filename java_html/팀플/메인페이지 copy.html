@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    margin: auto;
+    height: 100vh;
+}
+
+.main{
+    /* position: relative; */
+    margin: auto;
+    width: 1050px;
+    height: 2000px;
+}
+
+header{
+    height: 140px;
+    /* margin-top: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconBox{
+    width: 160px;
+    float: right;
+}
+
+.material-symbols-outlined{
+    color: #2f348f;
+    font-size: 30px;
+}
+
+input[type=text]{
+    width: 350px;
+    height: 38px;
+    border: none;
+    text-indent: 15px;
+    font-size: 17px;
+    outline: none;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+#searchIcon{
+    /* border: 1px solid black; */
+    color: #2f348f;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    font-size: 33px;
+}
+
+.searchBox{
+    position: relative;
+    border: 1px solid #2f348f;
+    height: 45px;
+    border-radius: 12px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav{
+    height: 45px;
+    position: sticky;
+    top: 15px;
+}
+
+.outerBox{
+    width: 100%;
+    height: 45px;
+}
+.outerBox>div{
+    float: left;
+    font-size: 19px;
+    text-indent: 10px;
+}
+.outerBox>div::after{
+    content: '';
+    clear: both;
+}
+.category{
+    width: 30%;
+    height: 40px;
+    border-bottom: 1px solid black;
+}
+.newItem{
+    width: 23%;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.bestItem{
+    width: 23%;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.saleItem{
+    width: 23%;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.catMenu{
+    display: none;
+    padding-top: 20px;
+}
+.catMenu>div{
+    height: 45px;
+    margin-top: 5px;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.category:hover .catMenu{
+    display: block;
+    /* z-index: 1; */
+}
+
+.catMenu>div:hover{
+    background-color: #eaebff;
+    color: #2f348f;
+    font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    height: 800px;
+}
+
+/* footer */
+.footerAll{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 380px;
+}
+.footer_left{
+    /* border: 1px solid black; */
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 45%;
+    height: 100%;
+    float: left;
+    margin: 15px;
+}
+button{
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gray ;
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.Btn1{
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: gray;
+}
+.Btn2{
+    width: 100%;
+    height: 70px;
+    font-size: 15px;
+    color: gray;
+}
+.Btn3{
+    width: 100%;
+    height: 70px;
+    font-size: 15px;
+    color: gray;
+}
+.footer_left_last{
+    color: gray;
+    font-size: 15px;
+}
+.footer_right{
+    /* border: 1px solid black; */
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin: 10px 5px 10px 10px;
+}
+.footer_right_Top>a{
+    color: black;
+    text-decoration: none;
+}
+.footer_right_Mid{
+    margin-top: 40px;
+    font-size: 13px;
+}
+.footer_right_Mid>p>a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #2f348f;
+}
+.footer_right_last{
+    margin-top: 50px;
+}
+.footer_right_last>a>img{
+    width: 40px;
+    height: 40px;
+}
+#first{
+    position: fixed;
+    border: none;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    transition: all 0.3s ;
+    background-color: #2f348f;
+    color: white;
+    text-align: center;
+}
+#first:hover{
+    bottom: 30px;
+}
+.ba_AllBox{
+        /* border: 1px solid black; */
+        position: fixed;
+        bottom: 600px;
+        right: 10px;
+        width: 100px;
+        height: 230px;
+    }
+    .ba_imga{
+        width: 100%;
+        height: 60%;
+    }
+    .ba_Text_All{
+        margin: 0;
+        padding: 0;
+        border: 1px solid rgb(173, 173, 173);
+    }
+    .ba_Text_All>li{
+        list-style: none;
+    }
+    .ba_Text1{
+        width: 100px;
+        height: 25px;
+        text-align: center;
+        border-bottom: 1px solid rgb(175, 175, 175);
+        font-size: 14px;
+    }
+    .ba_Text2{
+        width: 100px;
+        height: 25px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+
+/* 상단 올라가는 버튼 */
+#first{
+    position: fixed;
+    border: none;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    transition: all 0.3s ;
+    background-color: #2f348f;
+    text-align: center;
+}
+#first:hover{
+    bottom: 30px;
+}
+
+/* 슬라이드 */
+.slide {
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+
+    /* position */
+    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+    position: relative;
+
+    /* size */
+    width: 100%;
+
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+}
+
+.slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+
+    /* size */
+    width: 100%;
+    height: 300px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+
+    /* transition */
+    transition: left 0.15s;
+}
+
+.slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+
+    /* size */
+    width: 32px;
+    height: 32px;
+
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+}
+
+.slide_prev_button {
+    left: 10px;
+}
+
+.slide_next_button {
+    right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item.item {
+    background-color: white;
+    margin: auto;
+    display: block;
+    /* width: 80%; */
+    /* width: 1900px; */
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slide_pagination>li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #7fb5ff88;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.slide_pagination>li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: #7fb5ff;
+}
+
+.slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <a href="#top"><button id="first"><span class="material-symbols-outlined" style="color: white;">
+            arrow_circle_up
+            </span></button></a>
+
+        <header>
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODIiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCA4MiA0MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0ibm9uZSI+CiAgICAgICAgPHBhdGggZD0iTTAgMGg4MnY0MkgweiIvPgogICAgICAgIDxwYXRoIGQ9Ik02Mi41Ljk2NWMxLjAyNi0uNTU3IDIuNDY2LS43MTggMy4zNTYuMTA3Ljg5LjgyNS42NzYgMi4wNDggMCAzLjk3MyAwIDAtMS41MDUgNC4wNjYtMy4wNTUgOC4yNjJsLS4zOTggMS4wOGMtMS40MTQgMy44My0yLjc2MiA3LjQ4Ny0yLjkyNyA3Ljk2My0xLjQ5OCA0LjI0NSAxLjk2NyA0LjEyMiA0LjAyNC0uMTUyIDEuMTU5LTIuMzk0IDIuNjQ0LTYuMzU3IDIuNjQ0LTYuMzU3LjUyNC0xLjU2My42ODItMi41MDQuMzU5LTIuODI4LS4xMDctLjExMy4wNDUtLjI1Mi4xOC0uMzIzIDIuMjY5LTEuMTQ5IDQuNjMtLjA3MiAzLjMzNiAzLjMxbC0uMDU0LjEzOGMtLjM4Ny45NzgtMi42OCA2LjczMy0yLjY4IDYuNzMzLS42NzYgMS42Ni0uNTk1IDMuMjM2LjQxOCAzLjIzNi42ODYtLjAwNCAxLjQ2LS4zODUgMi4zMDQtMS4wODggMS44MTgtMS41MDQgMy4yMjItNC4zMTIgMy43MjctNS40NTQuMjMtLjUwOCAxLjA4Ny0yLjQyIDEuNzY2LTQuMzYxLjIzNi0uNjY1LjM2OS0xLjM2LjM5NS0yLjA2NWEuNDQzLjQ0MyAwIDAgMSAuMTk0LS40NTkgMy41NzggMy41NzggMCAwIDEgMS42Ny0uNDIgMS44MDUgMS44MDUgMCAwIDEgMS40NjUuNzA1Yy40NDMuNTk4LjU2NiAxLjU3OS4xMDMgMi44MDgtLjEyLjMyLTMuNzc1IDkuOTU4LTMuNzc1IDkuOTU4di4wMjZjMi4wNDEtMS4yMjMgMy44Ny0xLjMxMyA0Ljk1My0uODU0bC0uMDAzLS4wMTNjMS40OTUuNjQ3IDEuOTkgMi40NC45MzggMy41NTktLjEwMy4xMS0uMzYyLjA4NC0uMzYyLS4wOS0uMDk0LTEuMjUzLTIuNTE3LTMuNDk1LTYuMTA5LTEuMDc1bC0uMTQ1LjM4NS0xLjA2OCAyLjgwOGMtMi42MiA3LjAxOC01LjQwMyAxMi4xMzYtOS40MTUgMTEtMi42ODgtLjc2LTIuMzc3LTQuNjA3LjUxNS03Ljc5YTU0LjkgNTQuOSAwIDAgMSA2LjQ5LTUuODk4Yy4wNjgtLjE4OC4xMy0uMzUuMTg4LS41MTEuMjc4LS43OC40OTEtMS40MzQuNzkyLTIuMjY1bC4xNTktLjUxOGMtLjE3OC4yLS40OTguNTczLS43MTIuODEyLS43MTIuOC0yLjQ5NCAyLjc1Ny01LjMyOSAyLjIwN2wtLjIzNC0uMDUyYy0yLjA1LS41MDgtMi42MDgtMS45ODYtMi42NTUtMy4yNzctMi4xNDIgMi42NTYtNC4zNTEgMy40MjYtNS44MDcgMy4zOS0xLjk0OC0uMDQ4LTMuMzc4LTEuNTE0LTIuNDI3LTQuMjkgMS4wNTgtMy4xMDYgNS41LTE1LjMzMiA2Ljc5NS0xOSAuNDg1LTEuNTguNjY2LTIuNTguMTg0LTIuOTc0LS4xMjMtLjEwMy4wNTItLjI2NS4yLS4zNDZ6bTguMzY0IDI4Ljc3OGMtMS4xMDMuODgtNS41MjYgNC41My02Ljc1MiA3LjQ0MS0uNTA1IDEuMTk3LS4zNzYgMi4xNDkuNDg4IDIuMjMzIDEuOTYuMTk0IDQuMDEyLTMuODE4IDYuMjI4LTkuNTEyek0xNi4wMjggNS4zNTJjLS4wODcuMzMyLTEuMzE5IDMuODYtMi43MDEgNy43NDlsLS4yMDkuNTg2LS4yMS41ODktLjIxNS42MDRjNC42OTEtMS4xMjMgMTMuMDY0LTYuNTcgMTQuMDM1LTEwLjA4NS4xMi0uMTYxLjI5LS4yMi41NjYtLjAzNS40OTUuMzMuNjg2IDEuMTU1LjQ5NSAxLjkxOC0uNzY0IDMuMDM4LTYuNDE2IDcuMzQxLTExLjM3OSA5LjU1NC42MTIgMS42MzcgMi42ODIgNi4yNjcgNC4yMDYgOS4xMTEgMS42NjMgMy4xMTkgMy40MiA0LjU3NSA2LjE0NyA0LjczNyAxLjQ2LjA4NSAzLjAxNC0uNDQ3IDMuODkzLTEuMjJsLjE0OC0uMTQtLjAxMy4wM2MuMTk0LS4yMDQuNTExLjA3Ny4zNjYuMzIzYTYuNSA2LjUgMCAwIDEtNC45OTIgMi44NjdjLTYuMzQ1LjQyNy04Ljc3NC0zLjg3LTEzLjMwNC0xNC40OTQtLjM2Ni4xMjYtLjgwOS4yODgtMS4yNTUuNDUtLjA3NS4xODctMi4wNyA1LjY0Mi0yLjEzIDUuODIzLS45NDQgMi44Ny0xLjAwNSA0LjQ0Mi0uMzU4IDQuODk1LjE0NS4wOS4wNzQuMzMzLS4xNzguNDE0LTIuNTI3Ljc5Ni00Ljg1My0uNjk2LTMuNTU5LTQuNDQyIDEuMTYxLTMuMzE2IDUuNjktMTYuMTggNi45MTQtMTkuNjI2LjQyNy0xLjI5NC4xOTctMi4xMjUtLjQ5Mi0yLjMwNkM4LjUwNiAxLjc4Ljg3NyA4Ljc0OSAxLjk3MSAxNS4xODRjLjE5IDEuMTIuOTggMS43NDcgMS4zNzggMS42NjNhLjEzMy4xMzMgMCAwIDEgLjE1Ni4xNTkgMS41MDggMS41MDggMCAwIDEtMS44NDUgMS4wMzJDLjQ5IDE3Ljc4Mi4xMDcgMTYuNTI3LjA0MyAxNS44OC0uNjAxIDkuMjIgNi4xNDggMS4yMyAxMi4zODkuNThjMi4zNzgtLjI1IDQuNjEuOTYgMy42NCA0Ljc3MnptMjQuMDQgOS45MTMtLjA2LjIwNy0yLjgzIDguMTZjLS4zMDQuODUtLjEgMS43MzcuNTAxIDEuOTAyIDEuNzU3LjQ4MiA0LjAyOC0yLjE0NSA1LjEzMS00LjczM2E2Ny43OTQgNjcuNzk0IDAgMCAwIDEuNDc2LTMuODE1Yy41ODItMS42NDMgMS4xMDYtMy4xODMuNzgzLTMuOTA4LS4wNzUtLjE2OC4wNDUtLjI1Ni4yMjMtLjM1LjUwNS0uMjU1IDIuMjI2LS44MjUgMy4xNDEuMDY4LjY5NS42NzQuNjA5IDEuNzcxLS4wMyAzLjQzN2wtLjA5Ni4yNDIuMjItLjI3M2MyLjcwMy0zLjMgNC43OTItNC4yOTIgNi41NjMtMy41OTdsLjE0Ny4wNjJjMi4zODEgMS4wNzQgMS4xNDYgNS4yMTUtMi4xMTYgNS40OC0uMi4wMTctLjM1Ni0uMTI2LS4xNTgtLjQwNy4zOTUtLjYwNS4zNTYtMS45MDktLjc5Ni0yLjAyMi0xLjE1Mi0uMTEzLTIuODMgMS4yMDctNC4wMzggMi44NDQtMS4wODQgMS40NS0yLjIgMy45MTEtMy4zMjIgNy4yNzMtLjI3Mi44MTgtLjE0MyAxLjAxMi0uMTEgMS4wNjdhLjEuMSAwIDAgMSAwIC4wOTRjLS4xNDMuMjcyLS45NjUuNTk2LTEuNzYuNTk2LTEuNjI1LS4wMDctMi4yOTEtLjk0NS0xLjk2Ny0yLjQzNy0xLjg0OCAxLjc2NC0zLjcxMSAyLjYxNC01LjM1NSAyLjQ2NmEyLjUyNCAyLjUyNCAwIDAgMS0yLjIzNi0zLjEwM2MtMS40MjYgMS44MDktMy41NDIgMy4yNjgtNS42OTcgMy4wNjctMi4xNTUtLjItMy41LTEuNjY2LTIuODAyLTQuNzg4LjU5LTIuNTk4IDEuNTkyLTUuMjkgMi4yMDctNy4wMjcuNTE0LTEuNDU2LjYxOC0yLjQwNy4yOTQtMi43NS0uMTAzLS4xMTQuMDU1LS4yNS4xOTQtLjMyNCAxLjY5LS44ODYgNC4zOTQtLjMxNCAzLjYzIDIuMDktLjgwMiAyLjUyNy0yLjI1NSA2LjQ5LTIuNTUgNy40LS43MzcgMi4yODctLjI5IDMuNTIzLjc1NSAzLjU4IDEuMDQ1LjA2IDIuNDMtLjk2IDMuNDItMi41MDMgMS43Ni0yLjUyNCAyLjU4MS01LjY4NSAzLjM3Ny03Ljg4Mi4yMDQtLjU2LjUyNy0xLjg2Ni4xODUtMi4zNTItLjA5MS0uMTIzLjA2Ny0uMjU4LjI3NS0uMzcyIDEuNTM3LS44NDkgNC4yODUtLjY0IDMuNDAyIDIuNjA4eiIgZmlsbD0iIzVGMDA4MCIvPgogICAgPC9nPgo8L3N2Zz4K" alt="">
+            <div class="searchBox">
+                <input type="text" placeholder="검색창">
+                <span class="material-symbols-outlined" id="searchIcon">
+                    search
+                    </span>
+            </div>
+            <div class="iconBox">
+                <a href="/Project/WishList.html">
+                    <span class="material-symbols-outlined" style="font-size: 40px;">
+                        favorite
+                        </span>
+                </a>
+                <a href="/Project/Cart_Edit.html">
+                    <span class="material-symbols-outlined" style="font-size: 40px;" >
+                        shopping_cart
+                        </span>
+                </a>
+            </div>
+        </header>
+
+        <nav>
+            <div class="outerBox">
+                <div class="category">카테고리
+                    <div class="catMenu">
+                        <div class="vege">채소</div>
+                        <div class="fruit">과일</div>
+                        <div class="fish">수산/해산/건어물</div>
+                        <div class="meat">정육/계란</div>
+                        <div class="mainDish">국/반찬/메인 요리</div>
+                        <div class="noodle">면/양념/오일</div>
+                        <div class="drink">생수/음료/우유/커피</div>
+                        <div class="salad">샐러드/간편식</div>
+                        <div class="sideDish">간식/과자/떡</div>
+                    </div>
+                </div>
+                
+                <div class="newItem"><a href="https://www.naver.com">신상품</a></div>
+                <div class="bestItem"><a href="https://www.naver.com">베스트</a></div>
+                <div class="saleItem"><a href="https://www.naver.com">특가</a></div>
+            </div>
+
+        </nav>
+        <main>
+            <div class="slide slide_wrap">
+                <div class="slide_item item"><img
+                        src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/2ab7d341-ee9e-4e28-bf4d-01bf593756b6.jpg"
+                        alt=""></div>
+                <div class="slide_item item"><img
+                        src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/f5152b1e-0805-4c6a-aa26-d2c0902af6ca.jpg"
+                        alt=""></div>
+                <div class="slide_item item"><img
+                        src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/f2578f82-310b-4d00-b58b-cbfe6d989c18.jpg"
+                        alt=""></div>
+                <div class="slide_item item"><img
+                        src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/c0fdd0cc-775e-4e22-ae38-dc00e2d57389.jpg"
+                        alt=""></div>
+                <div class="slide_prev_button slide_button">&#10094;</div>
+                <div class="slide_next_button slide_button">&#10095;</div>
+                <ul class="slide_pagination"></ul>
+            </div>        
+        </main>
+        <footer>
+            <div class="footerAll">
+                <div class="footer_left">
+                    <div class="cs_centerName"><h2>고객행복센터</h2></div>
+                    <div class="cs_centerTel"><h1>1644-1107</h1><h4>월~토요일 오전7시 - 오후 6시</h4></div>
+                    <div class="Btn1">
+                        <button type="button">카카오톡 문의</button>
+                        <p>월~토요일 | 오전7시 - 오후6시</p>
+                        <p>일/공휴일 | 오전7시 - 오후1시</p>
+                    </div>
+                    <div class="Btn2">
+                        <button type="button">1:1문의</button>
+                        <p>365일</p>
+                        <p>고객센처 운영시간에 순차적으로 답변드리겠습니다.</p>
+                    </div>
+                    <div class="Btn3">
+                        <button type="button">대량주문 문의</button>
+                        <p>월~토요일 | 오전7시 - 오후6시</p>
+                        <p>점심시간 | 낮12시-오후1시</p>
+                    </div>
+                    <div class="footer_left_last">
+                        <p>비회원 문의 : help@kurlycorp.com</p>
+                        <p>비회원 대량주문 문의 : kurlygift@kurlycorp.com</p>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <div class="footer_right_Top">
+                        <a href="#">컬리소개</a> <a href="#">컬리소개영상</a> <a href="#">인재채용</a>
+                        <a href="#">이용약관</a> <a href="#"><b>개인정보처리방침</b></a> <a href="#">이용안내</a>
+                    </div>
+                    <div class="footer_right_Mid">
+                        <p>
+                            법인명(상호):주식회사 컬리 | 사업자등록번호:261-81-23567 <a href="#">사업자정보 확인</a>
+                            <br>통신판매업:제 2018-서울강남-01646호 | 개인정보보호책임자:이원준
+                            <br>주소:서울특별시 강남구 테헤란로 133, 18층(역삼동) | 대표이사:김슬아
+                            <br>입점문의:<a href="#">입점문의하기</a> | 제휴문의:<a href="#">business@kurlycorp.com</a>
+                            <br>채용문의:<a href="#">recruit@kurlycorp.com</a>
+                            팩스:070 - 7500 - 6098
+                        </p>
+                    </div>
+                    <div class="footer_right_last">
+                        <a href="#"><img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt="인스타"></a>
+                        <a href="#"><img src="https://res.kurly.com/pc/ico/1810/ico_fb.png" alt="페이스북"></a>
+                        <a href="#"><img src="https://res.kurly.com/pc/ico/1810/ico_blog.png" alt="블로그"></a>
+                        <a href="#"><img src="https://res.kurly.com/pc/ico/1810/ico_naverpost.png" alt="포스트"></a>
+                        <a href="#"><img src="https://res.kurly.com/pc/ico/1810/ico_youtube.png" alt="유튜브"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <nav class="side_Ba">
+            <div class="ba_AllBox">
+                <div class="ba_img"><img class="ba_imga" src="https://res.kurly.com/_next/static/images/deliveryInfo_20220701-a7b19dac069402e4b2aea7edbed0f6e0.png" alt="이미지"></div>
+                <div class="ba_text">
+                    <ul class="ba_Text_All">
+                        <li class="ba_Text1">등급별 혜택</li>
+                        <li class="ba_Text2">레시피</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // 슬라이크 전체 크기(width 구하기)
+        const slide = document.querySelector(".slide");
+        let slideWidth = slide.clientWidth;
+
+        // 버튼 엘리먼트 선택하기
+        const prevBtn = document.querySelector(".slide_prev_button");
+        const nextBtn = document.querySelector(".slide_next_button");
+
+        // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
+        let slideItems = document.querySelectorAll(".slide_item");
+        // 현재 슬라이드 위치가 슬라이드 개수를 넘기지 않게 하기 위한 변수
+        const maxSlide = slideItems.length;
+
+        // 버튼 클릭할 때 마다 현재 슬라이드가 어디인지 알려주기 위한 변수
+        let currSlide = 1;
+
+        // 페이지네이션 생성
+        const pagination = document.querySelector(".slide_pagination");
+
+        for (let i = 0; i < maxSlide; i++) {
+            if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
+            else pagination.innerHTML += `<li>•</li>`;
+        }
+
+        const paginationItems = document.querySelectorAll(".slide_pagination > li");
+
+        // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
+        const startSlide = slideItems[0];
+        const endSlide = slideItems[slideItems.length - 1];
+        const startElem = document.createElement("div");
+        const endElem = document.createElement("div");
+
+        endSlide.classList.forEach((c) => endElem.classList.add(c));
+        endElem.innerHTML = endSlide.innerHTML;
+
+        startSlide.classList.forEach((c) => startElem.classList.add(c));
+        startElem.innerHTML = startSlide.innerHTML;
+
+        // 각 복제한 엘리먼트 추가하기
+        slideItems[0].before(endElem);
+        slideItems[slideItems.length - 1].after(startElem);
+
+        // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
+        slideItems = document.querySelectorAll(".slide_item");
+        //
+        let offset = slideWidth + currSlide;
+        slideItems.forEach((i) => {
+            i.setAttribute("style", `left: ${-offset}px`);
+        });
+
+        function nextMove() {
+            currSlide++;
+            // 마지막 슬라이드 이상으로 넘어가지 않게 하기 위해서
+            if (currSlide <= maxSlide) {
+                // 슬라이드를 이동시키기 위한 offset 계산
+                const offset = slideWidth * currSlide;
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    i.setAttribute("style", `left: ${-offset}px`);
+                });
+                // 슬라이드 이동 시 현재 활성화된 pagination 변경
+                paginationItems.forEach((i) => i.classList.remove("active"));
+                paginationItems[currSlide - 1].classList.add("active");
+            } else {
+                // 무한 슬라이드 기능 - currSlide 값만 변경해줘도 되지만 시각적으로 자연스럽게 하기 위해 아래 코드 작성
+                currSlide = 0;
+                let offset = slideWidth * currSlide;
+                slideItems.forEach((i) => {
+                    i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                });
+                currSlide++;
+                offset = slideWidth * currSlide;
+                // 각 슬라이드 아이템의 left에 offset 적용
+                setTimeout(() => {
+                    // 각 슬라이드 아이템의 left에 offset 적용
+                    slideItems.forEach((i) => {
+                        // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                        i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+                    });
+                }, 0);
+                // // 슬라이드 이동 시 현재 활성화된 pagination 변경
+                paginationItems.forEach((i) => i.classList.remove("active"));
+                paginationItems[currSlide - 1].classList.add("active");
+            }
+        }
+        function prevMove() {
+            currSlide--;
+            // 1번째 슬라이드 이하로 넘어가지 않게 하기 위해서
+            if (currSlide > 0) {
+                // 슬라이드를 이동시키기 위한 offset 계산
+                const offset = slideWidth * currSlide;
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    i.setAttribute("style", `left: ${-offset}px`);
+                });
+                // 슬라이드 이동 시 현재 활성화된 pagination 변경
+                paginationItems.forEach((i) => i.classList.remove("active"));
+                paginationItems[currSlide - 1].classList.add("active");
+            } else {
+                // 무한 슬라이드 기능 - currSlide 값만 변경해줘도 되지만 시각적으로 자연스럽게 하기 위해 아래 코드 작성
+                currSlide = maxSlide + 1;
+                let offset = slideWidth * currSlide;
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                });
+                currSlide--;
+                offset = slideWidth * currSlide;
+                setTimeout(() => {
+                    // 각 슬라이드 아이템의 left에 offset 적용
+                    slideItems.forEach((i) => {
+                        // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                        i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+                    });
+                }, 0);
+                // 슬라이드 이동 시 현재 활성화된 pagination 변경
+                paginationItems.forEach((i) => i.classList.remove("active"));
+                paginationItems[currSlide - 1].classList.add("active");
+            }
+        }
+
+        // 버튼 엘리먼트에 클릭 이벤트 추가하기
+        nextBtn.addEventListener("click", () => {
+            // 이후 버튼 누를 경우 현재 슬라이드를 변경
+            nextMove();
+        });
+        // 버튼 엘리먼트에 클릭 이벤트 추가하기
+        prevBtn.addEventListener("click", () => {
+            // 이전 버튼 누를 경우 현재 슬라이드를 변경
+            prevMove();
+        });
+
+        // 브라우저 화면이 조정될 때 마다 slideWidth를 변경하기 위해
+        window.addEventListener("resize", () => {
+            slideWidth = slide.clientWidth;
+        });
+
+        // 각 페이지네이션 클릭 시 해당 슬라이드로 이동하기
+        for (let i = 0; i < maxSlide; i++) {
+            // 각 페이지네이션마다 클릭 이벤트 추가하기
+            paginationItems[i].addEventListener("click", () => {
+                // 클릭한 페이지네이션에 따라 현재 슬라이드 변경해주기(currSlide는 시작 위치가 1이기 때문에 + 1)
+                currSlide = i + 1;
+                // 슬라이드를 이동시키기 위한 offset 계산
+                const offset = slideWidth * currSlide;
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    i.setAttribute("style", `left: ${-offset}px`);
+                });
+                // 슬라이드 이동 시 현재 활성화된 pagination 변경
+                paginationItems.forEach((i) => i.classList.remove("active"));
+                paginationItems[currSlide - 1].classList.add("active");
+            });
+        }
+
+        // 드래그(스와이프) 이벤트를 위한 변수 초기화
+        let startPoint = 0;
+        let endPoint = 0;
+
+        // PC 클릭 이벤트 (드래그)
+        slide.addEventListener("mousedown", (e) => {
+            startPoint = e.pageX; // 마우스 드래그 시작 위치 저장
+        });
+
+        slide.addEventListener("mouseup", (e) => {
+            endPoint = e.pageX; // 마우스 드래그 끝 위치 저장
+            if (startPoint < endPoint) {
+                // 마우스가 오른쪽으로 드래그 된 경우
+                prevMove();
+            } else if (startPoint > endPoint) {
+                // 마우스가 왼쪽으로 드래그 된 경우
+                nextMove();
+            }
+        });
+
+        // 모바일 터치 이벤트 (스와이프)
+        slide.addEventListener("touchstart", (e) => {
+            startPoint = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+        });
+        slide.addEventListener("touchend", (e) => {
+            endPoint = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+            if (startPoint < endPoint) {
+                // 오른쪽으로 스와이프 된 경우
+                prevMove();
+            } else if (startPoint > endPoint) {
+                // 왼쪽으로 스와이프 된 경우
+                nextMove();
+            }
+        });
+
+        // 기본적으로 슬라이드 루프 시작하기
+        let loopInterval = setInterval(() => {
+            nextMove();
+        }, 3000);
+
+        // 슬라이드에 마우스가 올라간 경우 루프 멈추기
+        slide.addEventListener("mouseover", () => {
+            clearInterval(loopInterval);
+        });
+
+        // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+        slide.addEventListener("mouseout", () => {
+            loopInterval = setInterval(() => {
+                nextMove();
+            }, 3000);
+        });
+    </script>
+
+</body>
+
+</html>

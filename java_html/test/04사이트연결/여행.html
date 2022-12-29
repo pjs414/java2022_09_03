@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행지</title>
+    <link rel="stylesheet" href="/day03/style.css">
+</head>
+<body>
+    <h1>여행지!</h1>
+    <ul>
+        <li id="비행.jpg">
+                첫화면
+        </li>
+        <li id='베니스.jfif'>
+                베니스
+        </li>
+        <li id="마추픽추.webp">
+                마추픽추
+        </li>
+        <li id="일본.jpg">
+                일본
+        </li>
+        <li id="호그와트.gif">
+                호그와트
+        </li>
+    </ul>
+    <div class="image">
+        <img src="/image/비행.jpg" alt="" id="image">
+    </div>
+    <script>
+        document.addEventListener('click', (e)=>{
+            let ed=e.target.id
+            if(ed=='비행.jpg' || ed=='베니스.jfif' || ed=='마추픽추.webp' || ed=='일본.jpg' ||ed=='호그와트.gif'){
+                cpa(ed)
+            }
+        })
+        function cpa(name){
+            const img = document.getElementById('image'); 
+            img['src']='/image/'+name;
+        }
+    </script>
+</body>
+</html>

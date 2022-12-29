@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        다음과 같은 규칙의 배열을 만드는 range함수를 완성하시오
+    </h1>
+    <ul>
+        <li>
+            range(1,6,1){1,2,3,4,5}
+        </li>
+        <li>
+            range(3,10,2){1,2,3,4,5}
+        </li>
+        <li>
+            range(10,-10,-4){10,6,2,-2,-6}
+        </li>
+    </ul>
+    <form action="">
+        <h3 id="pri"></h3>
+        <hr>
+        <table>
+            <tr>
+                <td><input type="number" id="num1"></td>
+                <td><input type="number" id="num2"></td>
+                <td><input type="number" id="num3"></td>
+                <td><button type="button" onclick="range2()">출력</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function range(n1,n2,n3){
+            const range=[];
+            if(n1<n2){
+                while(n1<n2){
+                    range.push(n1);
+                    n1+=n3;
+                }
+            }else{
+                while(n1>n2){
+                    range.push(n1);
+                    n1+=n3;
+                }
+            }
+            console.log(range);
+        }
+        function range2(){
+            const range=[];
+            let n1 = Number(document.getElementById('num1').value);
+            let n2 = Number(document.getElementById('num2').value);
+            let n3 = Number(document.getElementById('num3').value);
+            if(n1<n2){
+                while(n1<n2){
+                    range.push(n1);
+                    n1+=n3;
+                }
+            }else{
+                while(n1>n2){
+                    range.push(n1);
+                    n1+=n3;
+                }
+            }
+            document.getElementById('pri').innerText=range;
+        }
+        range(3,10,2);
+    </script>
+</body>
+</html>

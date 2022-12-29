@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">
+        DOM(document Object Model) :  웹 페이지에 대한 인터페이스
+        여러 프로그램들이 페이지의 컨텐츠 및 구조, 그리고 스타일을 읽고,
+        조작할 수 있도록 제공
+    </h1>
+    <ul>
+        <li class="list">
+            엘리먼츠 가져오기
+        </li>
+        <li class="list">
+            document.getElementById('Id명') : 리턴 단일 엘리먼츠
+        </li>
+        <li class="list">
+            document.getElementByClassName('className') : 리턴타입 복수 엘리먼츠 :HTMLcollection 타입 저장
+        </li>
+        <li class="list">
+            document.getElementByTagName('tagName') : 리턴타입 복수 엘리먼츠 :HTMLcollection 타입 저장
+        </li>
+        <li class="list">
+            getElement로 가져오는 객체는 우선적으로 HTMLCollection의 index를 선택
+        </li>
+    </ul>
+    <script>
+        const h1 =document.getElementById('header');
+        const lis =document.getElementsByClassName('list');
+        const ul =document.getElementsByTagName('ul');
+        console.log(h1);
+        console.log(lis);
+        console.log(ul);
+        console.log(h1.innerText.length);
+        console.log(lis[0].firstChild.length);
+    </script>
+</body>
+</html>

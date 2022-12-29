@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css로 간단한 애니매이션 효과 주기-->
+    <!--
+        1.애니매이션 등록(@keyframes)
+            - 시간비율 0~100%, 0% =>from 100%=> to 둘다 사용가능
+            @keyframes 애니매이션명{
+                시간비율{
+                    스타일
+                }
+                시간비율{
+                    스타일
+                }
+            }
+        2.애니매이션 적용
+        -속성
+        -animation-name : 동작시킬 애니매이션 이름
+        -animation-duration : 애니매이션 동작 시간
+        -animation-iteration-count: 애니매이션 반복횟수, 숫자or infinite(무한히)
+    -->
+    <style>
+        /*폰트 사이즈 20~50으로 서서히 커지는 애니매이션 구현*/
+        @keyframes dung{
+            0%{
+                font-size: 0px;
+            }
+            60%{
+                font-size: 50px;
+            }
+            100%{
+                font-size: 0px;
+            }
+        }
+        .ani{
+            animation-name: dung;
+            animation-duration: 3s;
+            animation-iteration-count: 2;
+        }
+        @keyframes cir{
+            0%{
+                border-radius: 0%;
+            }
+            10%{
+                border-radius: 50%;
+            }
+            20%{
+                border-radius: 0%;
+            }
+            20%{
+                border-radius: 50%;
+            }
+            30%{
+                border-radius: 0%;
+            }
+            40%{
+                border-radius: 50%;
+            }
+            50%{
+                border-radius: 0%;
+            }
+            60%{
+                border-radius: 50%;
+            }
+
+            100%{
+                border-radius: 0%;
+            }
+        }
+
+        .sq{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: blueviolet;
+            animation-name: cir;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+
+
+        }
+    </style>
+</head>
+<body>
+    <span class="ani">animation</span>
+<br><br><br><br><br>
+    <div class="sq"></div>
+</body>
+</html>

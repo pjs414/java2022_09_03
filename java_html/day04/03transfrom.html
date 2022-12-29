@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        transform : 회전,이동,확대 할 때 사용
+        -translate(x1,y1) : x축으로 x1만큼 , y축으로 y1만큼 이동
+        -translateX(x1) : x축으로만 이동
+        -translateY(y1) : y축으로만 이동
+        -scale(w,h) : 가로를 w배, 높이를 h배만큼 조절, 0으로하면 안보이게됨
+        - scaleX(w) : 가로만 w배
+        - scaleY(h) : 세로만 h배
+        - rotate(a) : a각도 만큼 시계방향으로 회전
+        - skew(xa,ya) : x축으로 xa만큼, y축으로 ya만큼 기울임
+        - skewX(xa) : x축으로 xa만큼 기울임
+        - skewY(ya) : y축으로 xya만큼 기울임
+        -회전시 단위 deg
+    -->
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        @keyframes translate{
+            0%{ transform: translate(0,0);}
+            50%{ transform: translate(50px,50px);}
+            100%{ transform: translate(0,0);}
+        }
+        @keyframes scale{
+            0%{ transform: scale(0,0);}
+            50%{ transform: scale(2,2);}
+            80%{ transform: scaleY(4);}
+            100%{ transform: scale(0,0);}
+        }
+        @keyframes wheel{
+            0%{ transform: rotate(0);}
+            50%{ transform: rotate(1800000deg);}
+            100%{ transform: rotate(3600000deg);}
+        }
+        @keyframes ddd{
+            0%{ transform: skew(0,0);}
+            50%{ transform: skew(300000deg,180000deg);}
+            100%{ transform: skew(0,0);}
+        }
+        .box1:hover{
+            animation: translate 0.1ms infinite;
+            
+        }
+        .box2:hover{
+            animation: scale 0.1ms infinite;
+            transition: all 0.3s;
+        }
+        .box3:hover{
+            animation: wheel 0.3s infinite;
+            transition: all 0.3s;
+        }
+        .box4:hover{
+            animation: ddd 0.3s infinite;
+            transition: all 0.3s;
+        }
+        /*transition : 속성을 서서히 변화시키는 속성
+            -property : 서서히 변화시킬 속성 ( none, all, property(속성이름))
+            -timing-function : 진행속도 ( ease(기본),linear,ease-in ... 속도차이
+            -durration : 총시간
+            -delay: 시작지연
+            -initial : 기본값 설정
+            - inherit : 부모 요소의 속성값 상속*/
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <br><br><br><br><br><br><br>
+    <div class="box2"></div>
+    <br><br><br><br><br><br><br>
+    <div class="box3"></div>
+    <br><br><br><br><br><br><br>
+    <div class="box4"></div>
+    
+</body>
+</html>

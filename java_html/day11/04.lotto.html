@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호 생성</title>
+</head>
+<body>
+    
+    <h1>
+        1~45까지 중복되지 않은 숫자 6개가 랜덤으로 추출, 순서대로 출력
+        set객체 사용
+    </h1>
+    <button type="button" id="makerandom"> 랜덤번호 6개 출력</button>
+    <h1 id="printnum"></h1>
+    <button type="button" id="makerandom2"> 로또번호 7개 출력</button>
+    <h1 id="printnum2"></h1>
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <input type="number" id="n3">
+    <input type="number" id="n4">
+    <input type="number" id="n5">
+    <input type="number" id="n6">45
+    <button type="button" id="makerandom3"> 수동</button>
+    <h1 id="printnum3"></h1>
+    <button type="button" id="ekdcja"> 당첨여부</button>
+    <h1 id="pekdcja"></h1>
+    <script>
+        //배열 내용 삭제 : splice(index,count) : index부터 count개수까지 제거
+        //배열 내용 삭제 : splice(index,count, item, item) : index부터 count개수까지 제거후 item 삽입
+        const lott=[];
+        const lott2=[];
+        document.getElementById('makerandom').addEventListener('click',()=>{
+            lott.splice(0,lott.length);
+            document.getElementById('printnum').innerText=``;
+            const lot= new Set();
+            while(lot.size<6){
+                let ran = Math.floor((Math.random()*45)+1);
+                lot.add(ran);
+            }
+            for(const r of lot){
+                lott.push(r);
+            }
+            lott.sort(function(a,b){return a - b});
+            for(let i=0;i<lott.length;i++){
+                document.getElementById('printnum').innerText+=`  ${lott[i]}`;
+            }
+        })
+        document.getElementById('makerandom2').addEventListener('click',()=>{
+            lott2.splice(0,lott2.length);
+            document.getElementById('printnum2').innerText=``;
+            const lot= new Set();
+            while(lot.size<7){
+                let ran = Math.floor((Math.random()*45)+1);
+                lot.add(ran);
+            }
+            for(const r of lot){
+                lott2.push(r);
+            }
+            lott2.sort(function(a,b){return a - b});
+            for(let i=0;i<lott2.length;i++){
+                if(i==lott2.length-1){
+                    document.getElementById('printnum2').innerText+=` +[${lott2[i]}]`;
+                }else{
+                    document.getElementById('printnum2').innerText+=`  ${lott2[i]}`;
+                }
+            }
+        })
+        document.getElementById('ekdcja').addEventListener('click',()=>{
+            let cnt=0;
+            for(let i=0; i<lott.length;i++){
+                for(let j=0; j<lott2.length;j++){
+                    if(lott[i]==lott2[j]){
+                        if(j==lott2.length-1){ cnt+=10; }else{ cnt++; }
+                    }
+                }
+            }
+            switch(cnt){
+                case 6: case 16:
+                document.getElementById('pekdcja').innerText=`1등입니다`;
+                break;
+                case 15: 
+                document.getElementById('pekdcja').innerText=`2등입니다`;
+                break;
+                case 5: 
+                document.getElementById('pekdcja').innerText=`3등입니다`;
+                break;
+                case 4: case 14: 
+                document.getElementById('pekdcja').innerText=`4등입니다`;
+                break;
+                case 3: case 13: 
+                document.getElementById('pekdcja').innerText=`5등입니다`;
+                break;
+                case 2: 
+                default : 
+                document.getElementById('pekdcja').innerText=`꼴등입니다`;
+            }  
+        })
+    </script>
+</body>
+</html>

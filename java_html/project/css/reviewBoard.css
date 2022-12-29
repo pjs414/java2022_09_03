@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#container {
+    width: 1200px;
+    margin: auto;
+}
+h2 {
+    font-family: font3;
+    font-size: 30px;
+    margin: 50px 0 50px 0;
+}
+table {
+    width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    vertical-align: middle;
+    border-top: 2px solid rgba(161, 161, 161, 0.822);
+    border-bottom: 2px solid rgba(161, 161, 161, 0.822);
+}
+td {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+input {
+    outline: none;
+    border: 1px solid rgba(161, 161, 161, 0.822);
+}
+.td0 {
+    padding-top: 20px;
+}
+.td1 {
+    padding-left: 30px;
+    font-size: 20px;
+    display: inline-block;
+    width: 100px;
+    font-size: 14px;
+}
+.td2 input {
+    width: 800px;
+    height: 20px;
+    text-indent: 5px;
+}
+#main {
+    width: 100%;
+    height: 500px;
+    text-indent: 5px;
+    border: none;
+    background-color: whitesmoke;
+    outline: none;
+}
+textarea {
+    width: 940px;
+    height: 500px;
+    text-indent: 5px;
+    border: 1px solid rgba(161, 161, 161, 0.822);
+    outline: none;
+    padding: 30px;
+    resize: none;
+}
+.fileInput {
+    background-color: white;
+    border: none;
+}
+p {
+    padding: 10px;
+}
+#btn {
+    padding: 0 30px 30px 30px;
+    text-align: right;
+}
+#content button {
+    width: 70px;
+    height: 30px;
+    border: 1px solid rgba(161, 161, 161, 0.822);
+    background-color: white;
+    cursor: pointer;
+}
+#listbtn {
+    width: 940px;
+    margin: auto;
+    padding: 30px 0 0 0;
+}
+#list {
+    margin: 10px 0;
+    width: 70px;
+    height: 30px;
+    border: 1px solid rgba(161, 161, 161, 0.822);
+    background-color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            margin: 30px 0;
+        }
+        form{
+            display: inline-block;
+            background-color: rgb(37, 40, 173);
+            padding: 30px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input{
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            top: -2px;
+            margin-right: 20px;
+            padding-left: 20px;
+        }
+        form button{
+            border: 0;
+            background-color: white;
+            color: black;
+            font-size: 24px;
+            padding: 0 15px;
+            height: 50px;
+            cursor: pointer;
+        }
+        ul{
+            width: 479.63px;
+            background-color: #eee;
+            margin: 0 auto;
+            position: relative;
+        }
+        li{
+            list-style: none;
+            text-align: left;
+            padding: 20px 40px;
+            font-size: 24px;
+        }
+        #itemList ul li button{
+            position: absolute;
+            right: 30px;
+            border: 0;
+            background: #eee;
+            font-size: 24px;
+            line-height: 35px;
+            cursor: pointer;
+            /* float: right; */
+        }
+    </style>
+</head>
+<body>
+    <h1>여행 준비물 점검 목록</h1>
+    <form action="">
+        <input type="text" id="item">
+        <button type="button" id="addBtn">추가</button>
+    </form>
+    <div id="itemList">
+    </div>
+    <script>
+        var itemList = document.getElementById("itemList");
+        var item = document.getElementById("item");
+        var addBtn = document.getElementById("addBtn");
+        var deleteBtn = document.getElementsByClassName("deleteBtn");
+        var itemArr = [];
+        var deleteBtnCount = 0;
+        function clickAddBtn(){
+            if(item.value == "") return;
+            var liTag = `<li>${item.value}<button type="button" class="deleteBtn" name="${deleteBtnCount++}">X</button></li>`;
+            itemArr.push(liTag);
+            createItemListHTML();
+        }
+        function clickDeleteBtn(e){
+            var index = itemArr.indexOf(`<li>${e.target.parentElement.innerHTML}</li>`);
+            itemArr.splice(index, 1);
+            createItemListHTML();
+        }
+        function createItemListHTML(){
+            var HTML = "";
+            HTML += "";
+            for(i of itemArr) HTML += i;
+            HTML += "";
+            itemList.innerHTML = HTML;
+            addEventClickDeleteButton();
+        }
+        
+        addBtn.addEventListener("click", clickAddBtn);
+        function addEventClickDeleteButton(){
+            deleteBtn = document.getElementsByClassName("deleteBtn");
+            for(i=0; i<deleteBtn.length; i++){
+                deleteBtn.item(i).addEventListener("click", clickDeleteBtn);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>주어진 데이터를 순환하여 원하는 조건에 맍느 ㄴ정보를 추출
+    </h1>
+    <ol>
+        <li>
+            데이터의 환율 자료에서 통화이름만 가져와 새로운 배열에 출력
+        </li>
+        <li>
+            환율의 각 통화 변화율 중 가장 큰 변화를 보인 객체의 정보 출력
+        </li>
+        <li>
+            금시세의 포인트 정보를 분석하여 전일(yesterday)의 포인트값을 추정하여 출력
+        </li>
+    </ol>
+    <script src="06exchange.js">
+    </script>
+    <script>
+          var result = [];
+        console.log("통화 이름들")
+        wmd.doll.forEach(i=>result.push(i.name));
+        console.log(result)
+        
+        console.log("- - - - - -\n- - - - - -\n- - - - - -")
+        console.log("가장 큰 환율 변화를 보인 통화명")
+        var max = 0;
+        result = [];
+        Array.from(wmd.doll.entries()).forEach(i=>{
+            if(max < Math.abs(i[1].rate)){
+                max = Math.abs(i[1].rate);
+                result = i[0];
+            }
+        })
+        console.log(result);
+        console.log(wmd.doll[result]);
+        console.log("- - - - - -\n- - - - - -\n- - - - - -")
+        console.log("금 시세의 전일 포인트 값")
+        result = [];
+        wmd.gold.forEach(i=>{
+            var arr = [];
+            arr.push(i.name);
+            arr.push( Math.floor( (i.price - i.rate) *100 ) /100 );
+            result.push(arr);
+        });
+        result.forEach(i=>console.log(i));
+    </script>
+
+</body>
+</html>

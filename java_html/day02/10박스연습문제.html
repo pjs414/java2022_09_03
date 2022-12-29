@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p-box{
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+            display : inline-block
+           
+        }
+        .box1, .box2, .box3{
+            /*calc(식) : 단위가 다른 값들ㅇ르 계산할 때 사용하는 함수
+              연산자 앞뒤로 공백을 써줘야함*/
+            width: calc(100% / 3);
+            height: 100%;
+            display: inline-block;
+            /* float: left; */
+            
+        }
+        .box1{
+            background-color: rgb(104, 31, 31);
+        }
+        .box2{
+            background-color: cadetblue;
+        }
+        .box3{
+            background-color: rgb(170, 252, 38);
+        }
+        .p-box::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

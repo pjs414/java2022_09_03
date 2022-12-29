@@ -1,0 +1,75 @@
+@font-face {
+    font-family: font1;
+    src: url(/project/font/S-Core_Dream_OTF/SCDream1.otf);
+}
+@font-face {
+    font-family: font2;
+    src: url(/project/font/Nanum_Gothic/NanumGothic-Regular.ttf);
+}
+@font-face {
+    font-family: font3;
+    src: url(/project/font/S-Core_Dream_OTF/SCDream2.otf);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: font2;
+    text-align: center;
+}
+header {
+    width: 100%;
+    min-width: 1200px;
+    height: 285px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+#header > div > ul > li > a {
+    font-family: font1;
+}
+li > a {
+    transition: all 0.3s ease;
+}
+li > a:hover {
+    color: orange;
+}
+#topRight {
+    text-align: right;
+    width: 1200px;
+    margin: auto;
+}
+#topRight > li > a {
+    font-weight: bold;
+}
+#topLeft {
+    padding: 20px 20px 60px 0;
+}
+header > div > ul > li {
+    display: inline-block;
+    padding-left: 30px;
+    height: 70px;
+    line-height: 60px;
+}
+header > div > ul > li > a {
+    font-size: 15px;
+}
+#topLeft > li > a {
+    font-size: 60px;
+}
+#category {
+    /* width: 1200px; */
+    margin: 0 auto 30px auto;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+#category > li {
+    display: inline-block;
+    padding: 20px 70px;
+}
+#category > li > a {
+    font-family: font1;
+    font-weight: bold;
+}

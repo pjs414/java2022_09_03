@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        500/500px 박스를 만들고, 안녕하세요 글자를 입력
+        기울림, 굵게, 크기, 가운데정렬, 밑줄
+        윗줄 가운데 들어갈 수 있게 설정
+        박스의 배경식 지정 > 마우스 올리면 다른색으로 변경
+    -->
+    <style>
+        p{
+            box-sizing: border-box;/*박스 사이즈를 고정 , 콘텐츠를 중점으로 줄 수도 있음*/
+            width: 500px;
+            height: 500px;
+            border: 30px solid black;
+            
+            font-style: italic;
+            font-weight: 700;
+            font-size: 70px;
+            text-align: center;
+            text-decoration: underline;
+            background-color: rgba(0, 255, 255, 0.3);
+            letter-spacing: 5px; /*글자마다 여백주기*/
+            text-transform: capitalize; /*첫글자는 대문자*/
+            box-shadow: 2px 2px 3px gray;
+            border-radius: 10px;
+            padding-top: 100px;/*안쪽 여백*/
+
+        }
+        p:hover{
+            background-color: rgba(138, 43, 226, 0.5);
+            border: 30px solid violet;
+            box-shadow: 2px 2px 3px rgba(116, 51, 177, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        안녕하세요
+    </p>
+    
+</body>
+</html>

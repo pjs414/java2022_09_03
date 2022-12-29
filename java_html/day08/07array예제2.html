@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        높이를 받아 직삼각형 모양으로 *의 탑이 출력되게
+    </h1>
+    <pre>
+        입력받은 숫자 : 5
+        *
+        **
+        ***
+        ****
+        *****
+    </pre>
+    <form action="">
+        <h3 id="pri"></h3>
+        <hr>
+        <table>
+            <tr>
+                <td>높이의 값 입력</td>
+                <td><input type="number" id="num"></td>
+                <td><button type="button" onclick="startop()">별의탑</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function startop(){
+            let num = document.getElementById('num').value;
+
+            document.getElementById('pri').innerHTML=``;
+            for(let i=1;i<=num;i++){
+                for(let j=1;j<=i;j++){
+                    document.getElementById('pri').innerText+='*';
+                }
+                document.getElementById('pri').innerHTML+=` <br> `;
+            }
+        }
+    </script>
+</body>
+</html>

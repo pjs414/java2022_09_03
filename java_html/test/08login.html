@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(0, 97, 97);
+        }
+        .box>div, input{
+            width: 220px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        .fil{
+            border: none;
+            height: 30px;
+            margin: 3px auto;
+            font-size: 10px;
+        }
+        .box{
+            /* height: 200px; */
+            width: 250px;
+            background-color: rgb(209, 255, 219);
+            padding-top: 20px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            padding-bottom: 20px;
+            
+        }
+        .log{
+            margin: 3px auto;
+            background-color: rgb(0, 97, 97);
+            padding-top: 5px;
+            cursor: pointer;
+            font-size: 10px;
+            color: white;
+            border: none;
+            
+        }
+        .for{
+            font-size: 10px;
+            color: gray;
+            display: inline-block;
+            padding-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="">
+            <input type="text" class="fil" placeholder=" 아이디"><br>
+            <input type="password" class="fil" placeholder=" 비밀번호">
+            <input type="submit" class="log" value="로그인">
+        </form>
+        <a href="#" class="for">
+            비밀번호를 잊어버리셨나요
+        </a>
+    </div>
+    <!-- <script>
+        const btn = document.querySelector('.log');
+        const inputs = document.querySelectorAll('.fil')
+
+        function buttonA(){
+            let uid = document.querySelector('input[type="text"]').value;
+            let upw = document.querySelector('input[type="password"]').value;
+
+            let cek = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$])[\da-zA-Z!@#$]{4,8}$/.test(upw);
+
+            let alcek = /^(?=.*\d)(?=.*[a-z])[\da-z]{7,13}$/.test(uid) && cek;
+            console.log(uid, upw, cek, alcek);
+
+            btn.style.setProperty('background-color',
+            `${alcek ? 'rgb(0, 97, 97)': '#aaa'}`);
+
+            btn.disabled = !alcek;
+        }
+        document.querySelectorAll('.fil').forEach(function(fld){
+            fld.addEventListener('input',buttonA);
+        });
+        function changeColor(){
+            intervalObj = setInterval(flashColor,1000);
+        }
+        function flashColor(){
+            btn.style.color=(btn.style.color=='white'? 'red'||'blue':'white');
+            btn.style.backgroundColor=
+            (btn.style.backgroundColor=='red'? 'yellow':'red');
+        }
+        function stopFlashColor(){
+            clearInterval(intervalObj);
+        }
+    </script> -->
+</body>
+</html>

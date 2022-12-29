@@ -1,0 +1,73 @@
+footer {
+    width: 100%;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin-top: 100px;
+}
+#info {
+    width: 1200px;
+    margin: auto;
+}
+.infoDiv {
+    vertical-align: text-top;
+    padding: 30px;
+    display: inline-block;
+    text-align: left;
+}
+.title {
+    padding-left: 5px;
+    padding-bottom: 20px;
+}
+#company {
+    width: 500px;
+}
+#bank {
+    width: 200px;
+}
+#cs {
+    width: 300px;
+}
+#info > div > p {
+    font-weight: bold;
+}
+#info > div > ul > li {
+    float: left;
+    list-style: none;
+    color: rgb(158, 158, 158);
+    font-size: 13px;
+    padding: 3px;
+}
+#info > div > ul > li::after {
+    content: "|";
+    margin-left: 4px;
+    color: rgb(158, 158, 158);
+    display: inline-block;
+}
+#logo {
+    font-family: font1;
+    font-weight: bold;
+    padding: 40px 0;
+    font-size: 50px;
+}
+#snsLogo {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 80px 0;
+}
+#snsLogo > a {
+    font-size: 30px;
+    padding: 0 40px;
+    /* color: rgb(158, 158, 158); */
+}
+#go-top {
+    display: none;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9999;
+    color: #5a5a5a; /* 색상변경*/
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>계산기 만들기</h1>
+    숫자 2개와 연산자를 입력받아 연산의 겨로가르 출력
+    입력받는 input*2 
+    연산자는 button + - * /
+    결과창 h3 두 수의 연산결과 출력
+<br>
+    <button type="button" onclick="calcn('1')">1</button>
+    <button type="button" onclick="calcn('2')">2</button>
+    <button type="button" onclick="calcn('3')">3</button><br>
+    <button type="button" onclick="calcn('4')">4</button>
+    <button type="button" onclick="calcn('5')">5</button>
+    <button type="button" onclick="calcn('6')">6</button><br>
+    <button type="button" onclick="calcn('.')">7</button>
+    <button type="button" onclick="calcn('8')">8</button>
+    <button type="button" onclick="calcn('9')">9</button><br>
+    <button type="button" onclick="calcn('0')">0</button>
+    <button type="button" onclick="calca('+')">+</button>
+    <button type="button" onclick="calca('-')">-</button>
+    <button type="button" onclick="calca('*')">*</button>
+    <button type="button" onclick="calca('/')">/</button>
+    <button type="button" onclick="calca('C')">C</button>
+    <button type="button" onclick="re()">=</button>
+    <h3 id="n1"></h3>
+    <h3 id="com"></h3>
+    <h3 id="n2"></h3>
+    <h3 id="result"></h3>
+
+    <script>
+        let calc = '';
+        let num1 = 0;
+        let num2 = 0;
+
+        
+        function calca(value){
+            calc = value;
+            document.getElementById('result').innerText = "";
+            if(value=='C' || document.getElementById('n1').innerText.length==0){
+                document.getElementById('n1').innerText = "";
+                document.getElementById('n2').innerText = "";
+                document.getElementById('com').innerText = "";
+                document.getElementById('result').innerText = "";
+                calc='';
+                
+            }else{
+                num1 = Number(document.getElementById('n1').innerText);
+                document.getElementById('com').innerText=calc;
+            }
+        }
+        function calcn(value){
+            document.getElementById('result').innerText = "";
+            if(calc==''){
+                document.getElementById('n1').innerText+=value;
+            }else{
+                document.getElementById('n2').innerText+=value;
+            }
+        }
+
+        function re(){
+            if(calc=='' ||document.getElementById('n2').innerText.length==0){
+                document.getElementById('result').innerText=`잘못된 입력입니다.`;
+            }else{
+                num2 = Number(document.getElementById('n2').innerText);
+                switch(calc){
+                    case '+' : result = num1+num2; break;
+                    case '-' : result = num1-num2; break;
+                    case '*' : result = num1*num2; break;
+                    case '/' : result = num1/num2; break;
+                }
+                document.getElementById('result').innerText=`=${result.toFixed(2)}`;
+                calc='';
+            }
+        }
+
+    </script>
+</body>
+</html>

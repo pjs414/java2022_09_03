@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수학관련 함수 MATh</h1>
+    <h3>
+        math.random(),math.round(),math.ceil(),math.floor(),math.abs(),math.max(),math.min(),math.pow()
+    </h3>
+    <button type="button" onclick="gg()" >점수계산</button>
+    <button type="button"  id="sttbtn">점수계산2</button>
+    <h3 id="pri"></h3>
+    <script>
+        /*0~1사이 랜덤수 추출 math.random*/
+        console.log(Math.random());
+        /*0~9사이 랜덤수 추출 math.random*/
+        console.log(Math.floor(Math.random()*10));
+        /*1~10사이 랜덤수 추출 math.random*/
+        console.log(Math.floor(Math.random()*10)+1);
+        </script>
+    <script>
+        //세과목의 점수를 랜덤으로 발생시켜 과목의 홥과 평균 출력
+        console.log(Math.floor(Math.random()*101));
+        function gg(){
+            let kor = Math.floor(Math.random()*101);
+            let eng= Math.floor(Math.random()*101);
+            let math = Math.floor(Math.random()*101);
+            let sum =kor+eng+math;
+            let grade = '';
+            switch(Math.floor((sum/3)/10)){
+                case 10 : case 9:  grade = 'A'; break;
+                case 8 : grade = 'B'; break;
+                case 7 : grade = 'C'; break;
+                case 6 : grade = 'D'; break;
+                default : grade = 'F';
+            }
+            document.getElementById('pri').innerHTML=
+            `국어: ${kor}<br>영어: ${eng}<br>수학: ${math}<br>합계: ${sum}<br>평균: ${Math.round(sum/3*10)/10}<br>등급: ${grade}`;
+
+        }
+        document.getElementById('sttbtn').addEventListener('click',function(){
+            let sub1 = Math.floor(Math.random()*101);
+            let sub2 = Math.floor(Math.random()*101);
+            let sub3 = Math.floor(Math.random()*101);
+            let tot = sub1+sub2+sub3;
+            let avg = (tot/3).toFixed(2); //소수점 자리수 지정
+            document.getElementById('pri').innerHTML=
+            `국어: ${sub1}<br>영어: ${sub2}<br>수학: ${sub3}<br>합계: ${tot}<br>평균: ${avg}`
+        })
+
+    </script>
+</body>
+</html>

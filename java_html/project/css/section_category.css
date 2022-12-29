@@ -1,0 +1,79 @@
+#container {
+    width: 1200px;
+    margin: auto;
+    font-family: font1;
+    font-weight: bold;
+}
+#number {
+    display: none;
+}
+#categoryImg {
+    padding: 30px 0;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+#categoryImg > img {
+    width: 100%;
+    filter: brightness(80%);
+}
+#categoryImg > div {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.product {
+    display: flex;
+    height: 300px;
+    padding: 20px 30px;
+    border-bottom: 1px solid gainsboro;
+}
+.image {
+    width: 300px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.image > img {
+    width: 100%;
+}
+.info {
+    width: 780px;
+    padding: 30px 30px 10px 30px;
+}
+.productName {
+    font-size: 30px;
+    text-align: left;
+}
+.productCategory {
+    font-size: 20px;
+    text-align: left;
+}
+.productInfo {
+    height: 46px;
+    padding: 30px 50px 30px 0;
+    text-align: left;
+    overflow: hidden;
+}
+.priceAmount {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.productAmount {
+    padding-top: 60px;
+}
+.productPrice {
+    padding: 30px 30px 0 0;
+    vertical-align: bottom;
+    line-height: 84px;
+    font-family: font3;
+    font-size: 25px;
+}
+.red {
+    color: rgb(255, 52, 113);
+}

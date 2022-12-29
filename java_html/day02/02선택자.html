@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css적용시 
+        선택자{
+            속성1 : 값1
+            속성2 : 값2
+        }
+        선택자(selector) : 요소를 선택하게 하는 이름
+        선택자 종류
+        -id 선택자           #id명 : 무조건 1개/0개
+        -태그선택자          태그명 : 같은 이름을 가지는 모든 테그
+        -클래스 선택자       .클래스명 : 같은 클래스명을 가지는 태그
+        -가상클래스선택자    
+            :가상클래스명 :
+                           어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자
+                           주로 앞에 다른 선택자가 오고 뒤에 가상클래스 선택자가 나온다.
+                           :hover = 요소에 마우스를 올렸을때 사용 가능
+                           :focus = 요소가 포커스를 받고있을 때
+                           :nth-child(a) 0~ / : 부모요소의 모든 자식 요소중 a번째 선택
+                           :nth-of-type(a) 1~ : 부모요소의 특정 자식 요소중 a번째
+                             1: 첫번째 요소
+                             even : 짝수번째 요소
+                             odd : 홀수번째 요소
+                             숫자n : 해당 숫자의 배수
+        선택자 조합
+        - 여러 선택자를 이용하여 요소를 선택
+        -자식 관계
+            선택자1>선택자2 (div>input)
+            선택자1(바로 위의 부모요소)>선택자2(자식요소)
+        -자손관계
+            선택자1 선택자2 (div input)
+            선택자1(조상-바로 위의 부모포함) 선택자2(자식요소)
+        -본인 : 선택자를 붙여서 사용
+            선택자1선택자2 (div.hi , div#apple)
+            선택자1과 선택자2를 모두 만족하는 요소 선택
+            조합시 순서를 잘 고려해야함.
+            -안되는 조합
+            1.띄어쓰기 안하는 경우.
+            -.hidiv(hi와 div는 다른 클래스와 태그이지만 컴퓨터는 .hidiv 클래스를 찾으려함) -div.hi 올바른 경우
+            2.말이 안되는 경우
+            - 태그 선택자가 연속으로 옴 : pdiv(p와 div는 서로 다른 태그이지만 컴퓨터는 pdiv를 찾으려함)
+            - 아이디 선택자가 연속으로옴 : #input1#input2(한 요소에 아이디 하나만 가능하지만 두개를 동시에 사용 불가능)
+
+        선택자 우선순위
+            -아이디 > 클래스 > 태그 
+            -우선순위가 같은 경우에는 아래에 있는 내용이 적용
+        -->
+        <style>
+            p{
+                color: aqua;
+            }
+            p:nth-child(2){
+                color: red;
+            }
+            .color{
+                color: blue;
+            }
+            #green{
+                color: green;
+            }
+            body>p{
+                font-style: italic;
+            }
+            div{
+                color: rgb(86, 214, 139);
+            }
+            .hi{
+                color: blueviolet;
+            }
+            div.hi{
+                font-weight: 700;
+            }
+            p:hover{
+                font-weight: 700;
+            }
+        </style>
+</head>
+<body>
+    <p class="hi">안녕하세요 홍길동입니다</p>
+    <p>안녕하세요 임꺽정입니다</p>
+    <p class="color" id="green">안녕하세요 유관순입니다</p>
+    <div class="hi">jiji</div>
+    <div>hello</div>
+    
+</body>
+</html>

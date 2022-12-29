@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        컴퓨터가 0~9의 중복되지 않는 정수 3개를 랜덤으로 출제하면 맞추는 게임
+    </h1>
+    <h3>
+        게임 규칙
+    </h3>
+    <ul>
+        <li>
+            세자리의 숫자는 각 자리수를 갖고 서로 중복되지 않는다
+        </li>
+        <li>
+            각 자리수와 입력한 숫자의 자리수가 동일하 숫자야구게임임
+        </li>
+    </ul>
+    <hr><br>
+    <button type="button" id="start">게임시작</button>
+    숫자 추측하기 : <input type="number" id="mnum"><button type="button" id="report">추측 확인</button>
+    <ol id="ekq">
+       
+    </ol>
+
+    <script>
+        const base = [];
+        document.getElementById('start').addEventListener('click',()=>{
+            document.getElementById('ekq').innerHTML=``;
+            base.splice(0,base.length);
+            const set = new Set();
+            while(set.size<3){
+                set.add(Math.floor(Math.random()*10))
+            }
+            for(const r of set){
+                base.push(r);
+            }
+        });
+        document.getElementById('report').addEventListener('click',()=>{
+            let num= document.getElementById('mnum').value;
+            let sn=0;
+            let bn=0;
+            if(num.length==3){
+                const a = num.split("");
+                const b = new Set(a);
+                if(b.size==3){
+                    for(let i=0;i<base.length;i++){
+                        for(let j=0;j<a.length;j++){
+                            if(base[i]==a[i]){
+                                sn++;
+                            }else if(base[i]==a[j]&&i!=j){
+                                bn++;
+                            }
+                        }
+                    }
+                    if(sn==3){
+                        document.getElementById('ekq').innerHTML+=`<li>${a} =>성공</li>`;
+                        sn=0;
+                        bn=0;
+                    }else if(sn==0 && bn==0){
+                        document.getElementById('ekq').innerHTML+=`<li>OUT!</li>`;
+                    }else{
+                        document.getElementById('ekq').innerHTML+=
+                        ` <li>${a} => ${sn}S, ${bn}B</li>`;
+                    }
+                }else{
+                alert('잘못 입력하셨습니다.')
+                document.getElementById('mnum').focus;
+            }
+                
+            }else{
+                alert('잘못 입력하셨습니다.')
+                document.getElementById('mnum').focus;
+            }
+            
+        });
+
+
+    </script>
+</body>
+</html>
